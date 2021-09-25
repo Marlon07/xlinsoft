@@ -1,0 +1,131 @@
+@font-face {font-family: "Open Sans";src: url("./fonts/OpenSans-Regular.ttf");font-weight: normal;font-style: normal;}
+@font-face {font-family: "Open Sans-SemiBold";src: url("./fonts/OpenSans-SemiBold.ttf");font-weight: normal;font-style: normal;}
+@font-face {font-family: "Lato";src: url("./fonts/Lato-Black.ttf");font-weight: normal;font-style: normal;}
+
+$color-primario: #29dfb3;
+$color-secundario: #173e63;
+$funte-titulo: "Lato";
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+.App {
+    font-family: "Open Sans";
+}
+
+/* ESTILOS BANNER */
+.fondo {
+    position: absolute;
+    width: 33vw;
+    height: 100vh;
+    z-index: 0;
+    background: #f4f4f4;
+}
+
+.App-page {
+    background-color: #fff;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 1.6em;
+    color: $color-secundario;
+}
+
+.banner {
+    z-index: 1;
+    display: grid;
+    align-content: space-around;
+}
+
+.App-logo {
+    margin-left: 100px;
+    height: 40px;
+}
+
+.App-ilustracion {
+    width: 37vmax;
+    margin-left: 100px;
+}
+
+/* ESTILOS FORMULARIO */
+.content-form {
+    display: grid;
+    margin-right: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: $funte-titulo;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-weight: 100;
+}
+
+hr {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100px;
+    height: 3px;
+    background-color: #29dfb3;
+    border: none;
+}
+
+.form-login {
+    display: grid;
+}
+
+.input {
+    width: 275px;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 55px;
+    border-radius: 10px;
+    border: none;
+    font-size: 0.61em;
+    background: #f0f0f0;
+}
+
+::placeholder {
+    font-family: "Open Sans";
+    color: #8f8f8f;
+}
+
+.icon {
+    position: absolute;
+    height: 23px;
+    margin-top: 11px;
+    margin-left: 20px;
+}
+
+.btn-ingresar {
+    width: 330px;
+    font-size: 0.67em;
+    font-family: "Open Sans-SemiBold";
+    color: #fff;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 20px;
+    height: 43px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-ingresar:hover {
+    background-position: 100% 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-ingresar.bn28 {
+    background-image: linear-gradient(to right, #173e63 -10%, #29dfb3, #29dfb3, #173e63 110%);
+}
