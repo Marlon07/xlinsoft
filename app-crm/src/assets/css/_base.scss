@@ -1,0 +1,21 @@
+@font-face {font-family: "Open Sans";src: url("./fonts/OpenSans-Regular.ttf");font-weight: normal;font-style: normal;}
+@font-face {font-family: "Open Sans-SemiBold";src: url("./fonts/OpenSans-SemiBold.ttf");font-weight: normal;font-style: normal;}
+@font-face {font-family: "Lato";src: url("./fonts/Lato-Black.ttf");font-weight: normal;font-style: normal;}
+
+$color-primario: #43DEE2;
+$color-secundario: #173e63;
+$white: #ffffff;
+$fuente-titulo: 'Lato';
+$fuente-secundaria: 'Open Sans-SemiBold';
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.App {
+    font-family: "Open Sans";
+}
