@@ -12,16 +12,22 @@ body{
 
 .navegacion{
     position: fixed;
-    width: 300px;
+    width: 80px;
     height: 100%;
     background: $color-secundario;
-    border-left: 10px solid rgb(161, 24, 24);
+    border-left: 10px solid $color-secundario;
+    border-right: 8px solid $color-primario;
     transition: 0.5s;
     overflow: hidden;
+    z-index: 2;
+}
+
+.navegacion:hover{
+    width: 300px;
 }
 
 .navegacion ul{
-    position: inherit;align-self: baseline;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -29,17 +35,20 @@ body{
 
 .navegacion ul li{
     position: relative;
-    width: 200%;
+    width: 100%;
     list-style: none;
     border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
-.navegacion ul li:hover{
+.navegacion ul li:hover,
+.navegacion ul li.active{
     background: $color-primario;
 }
 
 .navegacion ul li:nth-child(1){
     margin-bottom: 40px;
+    font-family: $fuente-logo;
     pointer-events: none;
 }
 
@@ -48,11 +57,11 @@ body{
     display: block;
     width: 100%;
     display: flex;
-    text-decoration: none;
     color: $white;
 }
 
-.navegacion ul li:hover a{
+.navegacion ul li:hover a,
+.navegacion ul li.active a{
     color: $color-secundario;
 }
 
@@ -74,4 +83,34 @@ body{
     line-height: 60px;
     text-align: start;
     white-space: nowrap;
+}
+
+// Bordes externos
+
+.navegacion ul li:hover a::before,
+.navegacion ul li.active a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px $color-primario;
+    pointer-events: none;
+}
+
+.navegacion ul li:hover a::after,
+.navegacion ul li.active a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px $color-primario;
+    pointer-events: none;
 }
