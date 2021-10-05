@@ -26,6 +26,7 @@ const Inicio = () => {
                             temporibus placeat enim !</p>
                         <img src={inicio} className="svg-inicio" alt="ilustracion" />
                     </div>
+                <p></p>
                 </div>
             </div>
         </div>
