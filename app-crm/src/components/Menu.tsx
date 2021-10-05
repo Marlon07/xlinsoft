@@ -27,31 +27,43 @@ const Menu = () => {
                             <span className="title">Xlinsoft</span>
                         </Link>
                     </li>
-                    <li className="list">
-                        <NavLink to="/inicio">
+                    <li>
+                        <NavLink to="/inicio" activeClassName="active">
                             <span className="icon"><Icon.Home /></span>
                             <span className="title">Inicio</span>
                         </NavLink>
                     </li>
-                    <li className="list">
-                        <Link to="/productos">
-                            <span className="icon"><Icon.Package /></span>
+                    <li>
+                        <NavLink to="/productos" activeClassName="active">
+                            <span className="icon"><Icon.Box /></span>
                             <span className="title">Productos</span>
-                        </Link>
+                        </NavLink>
                     </li>
-                    <li className="list">
-                        <Link to="/ventas">
-                            <span className="icon"><Icon.ShoppingBag /></span>
+                    <li>
+                        <NavLink to="/ventas" activeClassName="active">
+                            <span className="icon"><Icon.ShoppingCart /></span>
                             <span className="title">Ventas</span>
-                        </Link>
+                        </NavLink>
                     </li>
-                    <li className="list">
-                        <Link to="/usuarios">
+                    <li>
+                        <NavLink to="/maestro-productos" activeClassName="active">
+                            <span className="icon"><Icon.Package /></span>
+                            <span className="title">Registro de Productos</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/maestro-ventas" activeClassName="active">
+                            <span className="icon"><Icon.ShoppingBag /></span>
+                            <span className="title">Registro de Ventas</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/usuarios" activeClassName="active">
                             <span className="icon"><Icon.User /></span>
                             <span className="title">Usuarios</span>
-                        </Link>
+                        </NavLink>
                     </li>
-                    <li className="list">
+                    <li>
                         <Link to="/">
                             <span className="icon"><Icon.LogOut /></span>
                             <span className="title">Salir</span>

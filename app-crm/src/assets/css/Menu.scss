@@ -21,50 +21,50 @@ body {
     width: 300px;
 }
 
-.navegacion ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
+// .navegacion ul {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+// }
 
-.navegacion ul li {
-    position: relative;
-    width: 100%;
-    list-style: none;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
+// .navegacion ul li {
+//     position: relative;
+//     width: 100%;
+//     list-style: none;
+//     border-top-left-radius: 15px;
+//     border-bottom-left-radius: 15px;
+// }
 
-.navegacion ul li.active {
-    background: $color-primario;
-}
+// .navegacion ul li.active {
+//     background: $color-primario;
+// }
 
-.navegacion ul li.active a::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -30px;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 15px 15px 0 $color-primario;
-    pointer-events: none;
-}
+// .navegacion ul li.active a::before {
+//     content: "";
+//     position: absolute;
+//     right: 0;
+//     top: -30px;
+//     width: 30px;
+//     height: 30px;
+//     background: transparent;
+//     border-radius: 50%;
+//     box-shadow: 15px 15px 0 $color-primario;
+//     pointer-events: none;
+// }
 
-.navegacion ul li.active a::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: -30px;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: 15px -15px 0 $color-primario;
-    pointer-events: none;
-}
+// .navegacion ul li.active a::after {
+//     content: "";
+//     position: absolute;
+//     right: 0;
+//     bottom: -30px;
+//     width: 30px;
+//     height: 30px;
+//     background: transparent;
+//     border-radius: 50%;
+//     box-shadow: 15px -15px 0 $color-primario;
+//     pointer-events: none;
+// }
 
 // .navegacion ul li:hover,
 // .navegacion ul li.active{
@@ -72,9 +72,22 @@ body {
 // }
 
 .navegacion ul li:nth-child(1) {
+    margin-top: 5px;
     margin-bottom: 40px;
     font-family: $fuente-logo;
     pointer-events: none;
+}
+
+.navegacion ul li:nth-child(8) {
+    position: absolute;
+    bottom: 30px;
+    transition: all 0.3s;
+    padding-right: 15px;
+}
+
+.navegacion ul li:nth-child(8):hover{
+    background: #eb7815;
+    border-radius: 15px;
 }
 
 .navegacion ul li a {
@@ -84,10 +97,6 @@ body {
     display: flex;
     color: $white;
 }
-
-// .navegacion ul li.active a{
-//     color: $color-secundario;
-// }
 
 .navegacion ul li a .icon {
     position: relative;
@@ -109,32 +118,35 @@ body {
     white-space: nowrap;
 }
 
-// Bordes externos
+.active{
+    background: $color-primario;
+    color: $color-secundario !important;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
 
-// .navegacion ul li:hover a::before,
-// .navegacion ul li.active a::before{
-//     content: '';
-//     position: absolute;
-//     right: 0;
-//     top: -50px;
-//     width: 50px;
-//     height: 50px;
-//     background: transparent;
-//     border-radius: 50%;
-//     box-shadow: 35px 35px 0 10px $color-primario;
-//     pointer-events: none;
-// }
+.active::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 $color-primario;
+    pointer-events: none;
+}
 
-// .navegacion ul li:hover a::after,
-// .navegacion ul li.active a::after{
-//     content: '';
-//     position: absolute;
-//     right: 0;
-//     bottom: -50px;
-//     width: 50px;
-//     height: 50px;
-//     background: transparent;
-//     border-radius: 50%;
-//     box-shadow: 35px -35px 0 10px $color-primario;
-//     pointer-events: none;
-// }
+.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 $color-primario;
+    pointer-events: none;
+}
