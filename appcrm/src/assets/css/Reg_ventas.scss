@@ -1,0 +1,339 @@
+@import 'base';
+
+// .container{
+//     display: block;
+//     min-width: calc(100% - 300px);
+//     left: 300px;
+//     top: 200px;
+//     background: #db8383;
+//     transition: 0.5s;
+// }
+.logo_reg_ventas{
+    position: absolute;
+    width: 603.47px;
+    height: 536.72px;
+    left: 1134px;
+    top: 272px;
+//     display: grid;
+//     grid-template-columns: 60% auto;
+//     //justify-content: center;
+//     //align-items: center;
+//     vertical-align: center;
+// // left: 1134px;
+// //     // top: 272px;
+}
+
+.vendedor{
+    position: absolute;
+    width: 308px;
+    height: 54px;
+    left: 290px;
+    top: 246px;  
+
+    background: #F0F0F0;
+    border-radius: 15px;  
+}
+
+.valorTotal{
+    position: absolute;
+    width: 308px;
+    height: 54px;
+    left: 688px;
+    top: 246px;
+
+    background: #F0F0F0;
+    border-radius: 15px;
+}
+
+.precioUnitario{
+    position: absolute;
+    width: 308px;
+    height: 52px;
+    left: 290px;
+    top: 362px;
+
+    background: #F0F0F0;
+    border-radius: 15px;
+}
+
+.referenciaProducto{
+    position: absolute;
+    width: 308px;
+    height: 52px;
+    left: 290px;
+    top: 476px;
+
+    background: #F0F0F0;
+    border-radius: 15px;
+}
+
+.cantidad{
+    position: absolute;
+    width: 308px;
+    height: 52px;
+    left: 290px;
+    top: 590px;
+
+    background: #F0F0F0;
+    border-radius: 15px;    
+}
+
+.identificacion{
+    position: absolute;
+    width: 308px;
+    height: 54px;
+    left: 688px;
+    top: 474px;
+
+    background: #F0F0F0;
+    border-radius: 15px;
+}
+
+.nombre{
+    position: absolute;
+    width: 308px;
+    height: 54px;
+    left: 688px;
+    top: 590px;
+
+    background: #F0F0F0;
+    border-radius: 15px;
+}
+
+.guardar{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+
+    //display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+
+    position: absolute;
+    width: 213.46px;
+    height: 50px;
+    left: 290px;
+    top: 851px;
+
+
+    /* 1 */
+
+    background: #173E63;
+    border-radius: 10px;
+
+
+}
+
+.cancelar{
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+
+    //display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* 1 */
+
+    color: #173E63;
+
+    position: absolute;
+    width: 162px;
+    height: 50px;
+    left: 578px;
+    top: 851px;
+
+    /* 1 */
+
+    border: 2px solid #173E63;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.txt_vendedor{
+    /* Vendedor */
+    position: absolute;
+    width: 151px;
+    height: 21px;
+    left: 290px;
+    top: 214px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+
+    /* 1 */
+
+    color: #173E63;
+}
+
+.txt_valorTotal{
+    position: absolute;
+    width: 206px;
+    height: 21px;
+    left: 688px;
+    top: 214px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+
+    /* 1 */
+
+    color: #173E63;
+}
+
+.txt_precioUnitario{
+    position: absolute;
+    width: 206px;
+    height: 21px;
+    left: 290px;
+    top: 330px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+
+    /* 1 */
+
+    color: #173E63;
+
+}
+
+.txt_referenciaProducto{
+    position: absolute;
+    width: 206px;
+    height: 21px;
+    left: 290px;
+    top: 444px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    
+    /* 1 */
+    
+    color: #173E63;
+}
+
+.txt_cantidad{
+    position: absolute;
+    width: 206px;
+    height: 21px;
+    left: 290px;
+    top: 558px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    
+    /* 1 */
+    
+    color: #173E63;
+}
+
+.txt_identificacion{
+    position: absolute;
+    width: 206px;
+    height: 21px;
+    left: 688px;
+    top: 442px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    
+    /* 1 */
+    
+    color: #173E63;
+}
+
+.txt_nombre{
+    position: absolute;
+    width: 206px;
+    height: 21px;
+    left: 688px;
+    top: 558px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    
+    /* 1 */
+    
+    color: #173E63;
+}
+
+.txt_datosCliente{
+    position: absolute;
+    width: 206px;
+    height: 21px;
+    left: 688px;
+    top: 377px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    
+    /* 1 */
+    
+    color: #173E63;
+}
+
+
+// .logo_reg_ventas{
+//     // position: absolute;
+//     // width: calc(100% - 80px);
+//     // left: 80px;
+//     // min-height: 60px;
+//     // transition: 0.5s;
+//     display: grid;
+//     grid-template-columns: auto auto;
+//     position: absolute;
+//     width: 603.47px;
+//     height: 536.72px;
+//     // left: 1134px;
+//     // top: 272px;
+    
+// }
