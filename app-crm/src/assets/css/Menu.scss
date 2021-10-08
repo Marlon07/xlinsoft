@@ -1,0 +1,102 @@
+@import "base";
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navegacion {
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    background: $color-secundario;
+    border-left: 10px solid $color-secundario;
+    border-right: 8px solid $color-primario;
+    overflow-x: hidden;
+    z-index: 2;
+    transition: width 0.5s;
+}
+
+.navegacion:hover {
+    width: 300px;
+}
+
+.navegacion ul li:nth-child(1) {
+    margin-top: 5px;
+    margin-bottom: 40px;
+    font-family: $fuente-logo;
+    pointer-events: none;
+}
+
+.navegacion ul li:nth-child(8) {
+    position: absolute;
+    bottom: 30px;
+    transition: all 0.3s;
+    padding-right: 15px;
+}
+
+.navegacion ul li:nth-child(8):hover{
+    background: #eb7815;
+    border-radius: 15px;
+}
+
+.navegacion ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: $white;
+}
+
+.navegacion ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.75em;
+}
+
+.navegacion ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.active{
+    background: $color-primario;
+    color: $color-secundario !important;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.active::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -30px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 $color-primario;
+    pointer-events: none;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 $color-primario;
+    pointer-events: none;
+}
