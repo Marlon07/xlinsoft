@@ -1,339 +1,86 @@
 @import 'base';
 
-// .container{
-//     display: block;
-//     min-width: calc(100% - 300px);
-//     left: 300px;
-//     top: 200px;
-//     background: #db8383;
-//     transition: 0.5s;
-// }
-.logo_reg_ventas{
-    position: absolute;
-    width: 603.47px;
+.contenedor{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin-top: 90px;
+    font-family: 'Open Sans';
+    font-size: 1em;
+}
+
+.img_reg_ventas{
+    width: 600px;
     height: 536.72px;
-    left: 1134px;
-    top: 272px;
-//     display: grid;
-//     grid-template-columns: 60% auto;
-//     //justify-content: center;
-//     //align-items: center;
-//     vertical-align: center;
-// // left: 1134px;
-// //     // top: 272px;
+    margin-right: 100px;
 }
 
-.vendedor{
-    position: absolute;
-    width: 308px;
-    height: 54px;
-    left: 290px;
-    top: 246px;  
-
-    background: #F0F0F0;
-    border-radius: 15px;  
+.label{
+    display: block;
+    margin-bottom: 10px;
+    color: $color-secundario;
 }
 
-.valorTotal{
-    position: absolute;
-    width: 308px;
-    height: 54px;
-    left: 688px;
-    top: 246px;
-
-    background: #F0F0F0;
-    border-radius: 15px;
-}
-
-.precioUnitario{
-    position: absolute;
-    width: 308px;
-    height: 52px;
-    left: 290px;
-    top: 362px;
-
-    background: #F0F0F0;
-    border-radius: 15px;
-}
-
-.referenciaProducto{
-    position: absolute;
-    width: 308px;
-    height: 52px;
-    left: 290px;
-    top: 476px;
-
-    background: #F0F0F0;
-    border-radius: 15px;
-}
-
-.cantidad{
-    position: absolute;
-    width: 308px;
-    height: 52px;
-    left: 290px;
-    top: 590px;
-
-    background: #F0F0F0;
-    border-radius: 15px;    
-}
-
-.identificacion{
-    position: absolute;
-    width: 308px;
-    height: 54px;
-    left: 688px;
-    top: 474px;
-
-    background: #F0F0F0;
-    border-radius: 15px;
-}
-
-.nombre{
-    position: absolute;
-    width: 308px;
-    height: 54px;
-    left: 688px;
-    top: 590px;
-
-    background: #F0F0F0;
-    border-radius: 15px;
-}
-
-.guardar{
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
-    /* identical to box height */
-
-    //display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #FFFFFF;
-
-    position: absolute;
-    width: 213.46px;
+.input{
+    width: 300px;
     height: 50px;
-    left: 290px;
-    top: 851px;
-
-
-    /* 1 */
-
-    background: #173E63;
-    border-radius: 10px;
-
-
+    margin-bottom: 30px;
+    padding: 20px;
+    font-size: 1em;
+    background: #F0F0F0;
+    border-radius: 15px;
+    border: none;
 }
 
-.cancelar{
+.input:focus{
+    outline: 2px solid $color-secundario !important;
+}
 
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    /* identical to box height */
+.formulario{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+    h4{
+        margin-top: 45px;
+        margin-bottom: 45px;
+        font-family: $fuente-secundaria;
+        color: $color-secundario;
+    }
+}
 
-    //display: flex;
-    align-items: center;
-    text-align: center;
+.btn-guardar{
+    width: 220px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: 75px;
+    font-family: $fuente-secundaria;
+    font-size: 1em;
+    color: $white;
+    background: $color-secundario;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
 
-    /* 1 */
+.btn-guardar:hover{
+    background: #63bd0f;
+}
 
-    color: #173E63;
-
-    position: absolute;
+.btn-cancelar{
     width: 162px;
     height: 50px;
-    left: 578px;
-    top: 851px;
-
-    /* 1 */
-
-    border: 2px solid #173E63;
-    box-sizing: border-box;
+    font-family: 'Open Sans';
+    font-size: 1em;
+    color: $color-secundario;
+    background: $white;
+    border: 2px solid $color-secundario;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
-.txt_vendedor{
-    /* Vendedor */
-    position: absolute;
-    width: 151px;
-    height: 21px;
-    left: 290px;
-    top: 214px;
-
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-
-    /* 1 */
-
-    color: #173E63;
+.btn-cancelar:hover{
+    border: 2px solid #eb7815;
+    color: #eb7815;
 }
-
-.txt_valorTotal{
-    position: absolute;
-    width: 206px;
-    height: 21px;
-    left: 688px;
-    top: 214px;
-
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-
-    /* 1 */
-
-    color: #173E63;
-}
-
-.txt_precioUnitario{
-    position: absolute;
-    width: 206px;
-    height: 21px;
-    left: 290px;
-    top: 330px;
-
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-
-    /* 1 */
-
-    color: #173E63;
-
-}
-
-.txt_referenciaProducto{
-    position: absolute;
-    width: 206px;
-    height: 21px;
-    left: 290px;
-    top: 444px;
-    
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    
-    /* 1 */
-    
-    color: #173E63;
-}
-
-.txt_cantidad{
-    position: absolute;
-    width: 206px;
-    height: 21px;
-    left: 290px;
-    top: 558px;
-    
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    
-    /* 1 */
-    
-    color: #173E63;
-}
-
-.txt_identificacion{
-    position: absolute;
-    width: 206px;
-    height: 21px;
-    left: 688px;
-    top: 442px;
-    
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    
-    /* 1 */
-    
-    color: #173E63;
-}
-
-.txt_nombre{
-    position: absolute;
-    width: 206px;
-    height: 21px;
-    left: 688px;
-    top: 558px;
-    
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    
-    /* 1 */
-    
-    color: #173E63;
-}
-
-.txt_datosCliente{
-    position: absolute;
-    width: 206px;
-    height: 21px;
-    left: 688px;
-    top: 377px;
-    
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
-    display: flex;
-    align-items: center;
-    
-    /* 1 */
-    
-    color: #173E63;
-}
-
-
-// .logo_reg_ventas{
-//     // position: absolute;
-//     // width: calc(100% - 80px);
-//     // left: 80px;
-//     // min-height: 60px;
-//     // transition: 0.5s;
-//     display: grid;
-//     grid-template-columns: auto auto;
-//     position: absolute;
-//     width: 603.47px;
-//     height: 536.72px;
-//     // left: 1134px;
-//     // top: 272px;
-    
-// }

@@ -1,14 +1,5 @@
 @import 'base';
 
-// .container{
-//     display: block;
-//     min-width: calc(100% - 300px);
-//     left: 300px;
-//     top: 200px;
-//     background: #db8383;
-//     transition: 0.5s;
-// }
-
 .main{
     position: absolute;
     width: calc(100% - 80px);
@@ -31,6 +22,7 @@
     position: relative;
     width: 60px;
     height: 60px;
+    right: 25px;
     color: $color-secundario;
     display: flex;
     justify-content: center;
@@ -38,10 +30,34 @@
 }
 
 .content{
-    padding: 30px;
+    padding: 30px 100px 0 100px;
+
     h1{
+        margin-bottom: 60px;
         font-size: 1.5em;
         font-family: $fuente-titulo;
         color: $color-secundario;
     }
+}
+
+.card-principal{
+    width: 100%;
+    height: 300px;
+    padding-left: 100px;
+    display: grid;
+    align-content: center;
+    grid-template-columns: 60% auto;
+    color: $color-secundario;
+    background: #bde1e2;
+    border-radius: 15px;
+    p{
+        line-height: 28px;
+    }
+}
+
+.svg-inicio{
+    position: absolute;
+    width: 400px;
+    right: 10%;
+    top: 15%;
 }

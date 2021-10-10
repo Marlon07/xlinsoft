@@ -10,9 +10,6 @@ const Usuarios = () => {
             {/* main */}
             <div className="main">
                 <div className="topbar">
-                    <div className="toggle">
-                        <Icon.Menu />
-                    </div>
                     <div className="user">
                         <Icon.User />
                     </div>
