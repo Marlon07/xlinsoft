@@ -1,5 +1,27 @@
 @import "base";
 
+.inp-buscar{
+  width: 400px;
+  height: 40px;
+  padding-left: 50px;
+  font-size: 0.95em;
+  border-radius: 10px;
+  border: 2px solid #d3d3d3;
+  transition: all 0.2s;
+}
+
+.ico-buscar{
+  position: absolute;
+  line-height: 50px;
+  margin-left: 15px;
+  color: #a7a7a7;
+}
+
+.inp-buscar:focus{
+  outline: none;
+  border: 2px solid $color-secundario;
+}
+
 .table {
   width: 100%;
   font-size: 0.9em;
@@ -7,29 +29,42 @@
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
+  outline: 1px solid #d3d3d3;
 }
 
 .table th {
   background: $color-secundario;
   color: $white;
   padding: 10px;
+  text-align: left;
   padding-left: 2em;
-  padding-right: 2em;
 }
 
 .table tr {
-//   height: 42px;
+  height: 60px;
   background: #fbfbfb;
   color: #4e4e4e;
 }
-.table tr:nth-child(2n + 1) {
-  background-color: #EEEEEE;
-//   color: white;
+.table tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.table tr:hover {
+  background-color: #bde1e2;
+  transition: all 0.2s;
 }
 
 .table td {
-padding-left: 2em;
-height: 60px;
+  padding-left: 2em;
+  height: 60px;
+  vertical-align: middle;
+}
+
+.table td:nth-child(2) {
+  width: 15%;
+}
+.table td:nth-child(3) {
+  width: 50%;
 }
 
 .btn-editar {
@@ -37,6 +72,9 @@ height: 60px;
   background: none;
   cursor: pointer;
   transition: all 0.2s;
+  margin-right: 15px;
+  font-size: 1px !important;
+  color: $color-secundario;
 }
 
 .btn-editar:hover {
@@ -46,6 +84,7 @@ height: 60px;
 .btn-eliminar {
   border: none;
   background: none;
+  color: $color-secundario;
   cursor: pointer;
   transition: all 0.2s;
 }

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../Global";
-import '../assets/css/MaestroProductos.scss';
-import * as Icon from 'react-feather'
-
+import "../assets/css/MaestroProductos.scss";
+import * as Icon from "react-feather";
 
 const url = Global.urlproductos;
 
@@ -26,7 +25,10 @@ class CrudTable extends Component {
   render() {
     return (
       <div>
-        <input type="text" />
+        <div>
+          <span className="ico-buscar"><Icon.Search /></span>
+          <input className="inp-buscar" type="text" placeholder="Buscar" />
+        </div>
         <br />
         <br />
         <table className="table">
@@ -47,11 +49,20 @@ class CrudTable extends Component {
                   <td>{producto.id}</td>
                   <td>{producto.nombre}</td>
                   <td>{producto.descripcion}</td>
-                  <td>&#36; {new Intl.NumberFormat("es-ES").format(producto.valorUnitario)}</td>
+                  <td>
+                    &#36;{" "}
+                    {new Intl.NumberFormat("es-ES").format(
+                      producto.valorUnitario
+                    )}
+                  </td>
                   <td>{producto.estado}</td>
                   <td>
-                    <button className="btn-editar"><Icon.Edit2 /></button>
-                    <button className="btn-eliminar"><Icon.Trash2 /></button>
+                    <button className="btn-editar">
+                      <Icon.Edit2 />
+                    </button>
+                    <button className="btn-eliminar">
+                      <Icon.Trash2 />
+                    </button>
                   </td>
                 </tr>
               );
