@@ -60,11 +60,11 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .btn-guardar:hover{
-    background: #63bd0f;
+    background: $green;
 }
 
 .btn-cancelar{
@@ -77,10 +77,11 @@
     border: 2px solid $color-secundario;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .btn-cancelar:hover{
-    border: 2px solid #eb7815;
-    color: #eb7815;
+    border: 2px solid $orange;
+    color: $orange;
+    background: #fff0e3;
 }

@@ -1,0 +1,53 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Nvidia RTX 2080 S",
+      "descripcion": "Tarjeta gráfica para videojuegos",
+      "valorUnitario": 3350000,
+      "estado": "No disponible"
+    },
+    {
+      "id": 2,
+      "nombre": "Monitor LED QHD",
+      "descripcion": "Pantalla de 75Hz para mejor fluidez",
+      "valorUnitario": 926000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 3,
+      "nombre": "Diadema Gamer Redragon",
+      "descripcion": "Este auricular, de sonido 7.1 con USB, garantizan la mejor calidad de sonido en nuestros diafragmas de 40 mm con imanes de neodimio, ideales en la construcción de periféricos de sonido.",
+      "valorUnitario": 171000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 4,
+      "nombre": "Teclado redragon k630w",
+      "descripcion": "El interruptor azul táctil distintivo ofrece una respuesta de escritura auditiva fantástica. Intercambiable en caliente con otros conmutadores Redragon. Hecho para durar con interruptores clasificados para 50 millones de pulsaciones de teclas.",
+      "valorUnitario": 176000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 5,
+      "nombre": "Nvidia RTX 3080 Ti",
+      "descripcion": "Tarjeta grafica para videojuegos gama alta",
+      "valorUnitario": 13500000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 6,
+      "nombre": "Memoria Ram spectrix",
+      "descripcion": "Cuenta con una amplia gama de frecuencia de 3200 MHz y admite los perfiles Intel® XMP 2.0.",
+      "valorUnitario": 200000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 7,
+      "nombre": "Board arktek",
+      "descripcion": "Placa madre para procesadores intel",
+      "valorUnitario": 300000,
+      "estado": "Disponible"
+    }
+  ]
+}

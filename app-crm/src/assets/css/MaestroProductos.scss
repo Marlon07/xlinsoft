@@ -1,0 +1,55 @@
+@import "base";
+
+.table {
+  width: 100%;
+  font-size: 0.9em;
+  margin-bottom: 40px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th {
+  background: $color-secundario;
+  color: $white;
+  padding: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.table tr {
+//   height: 42px;
+  background: #fbfbfb;
+  color: #4e4e4e;
+}
+.table tr:nth-child(2n + 1) {
+  background-color: #EEEEEE;
+//   color: white;
+}
+
+.table td {
+padding-left: 2em;
+height: 60px;
+}
+
+.btn-editar {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-editar:hover {
+  color: #388be9;
+}
+
+.btn-eliminar {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-eliminar:hover {
+  color: #e20000;
+}
