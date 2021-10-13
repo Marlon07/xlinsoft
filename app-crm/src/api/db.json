@@ -48,6 +48,45 @@
       "descripcion": "Placa madre para procesadores intel",
       "valorUnitario": 300000,
       "estado": "Disponible"
+    },
+    {
+      "nombre": "Teclado DURGOD",
+      "descripcion": "Teclado TKL retroiluminado color blanco",
+      "valorUnitario": "465000",
+      "estado": "noDisponible",
+      "id": 8
+    },
+    {
+      "nombre": "",
+      "descripcion": "",
+      "valorUnitario": "",
+      "estado": "",
+      "tipoModal": "",
+      "id": 9
+    },
+    {
+      "nombre": "",
+      "descripcion": "",
+      "valorUnitario": "",
+      "estado": "",
+      "tipoModal": "",
+      "id": 10
+    },
+    {
+      "nombre": "",
+      "descripcion": "",
+      "valorUnitario": "",
+      "estado": "",
+      "tipoModal": "",
+      "id": 11
+    },
+    {
+      "nombre": "qweq",
+      "descripcion": "qeqwe",
+      "valorUnitario": "234",
+      "estado": "No disponible",
+      "tipoModal": "",
+      "id": 12
     }
   ]
 }

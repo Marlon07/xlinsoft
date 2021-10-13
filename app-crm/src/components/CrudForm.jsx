@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 
 const url = Global.urlproductos;
 
-class CrudTable extends Component {
+class CrudForm extends Component {
   state = {
     data: [],
     form: {
@@ -18,18 +18,6 @@ class CrudTable extends Component {
       estado: "",
       tipoModal: "",
     },
-  };
-
-  cargarProductos = () => {
-    axios
-      .get(url)
-      .then((response) => {
-        // console.log(res.data);
-        this.setState({ data: response.data });
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
   };
 
   // Añadir producto
@@ -74,73 +62,15 @@ class CrudTable extends Component {
     });
   };
 
-  componentDidMount() {
-    this.cargarProductos();
-  }
+  // componentDidMount() {
+  //   this.peticionPost();
+  // }
 
   render() {
     const { form } = this.state;
     return (
       <div>
-        <div>
-          <span className="ico-buscar">
-            <Icon.Search size={20} />
-          </span>
-          <input className="inp-buscar" type="search" placeholder="Buscar" />
-          <NavLink
-            to="/productos"
-            activeClassName="active"
-            // onClick={() => {
-            //   this.setState({ form: null, tipoModal: "insertar" });
-            // }}
-          >
-            <span className="btn-registrar">Registrar Nuevo</span>
-          </NavLink>
-        </div>
-        <br />
-        <br />
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Valor Unitario</th>
-              <th>Estado</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.data.map((producto, i) => {
-              return (
-                <tr key={i}>
-                  <td>{producto.id}</td>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.descripcion}</td>
-                  <td>
-                    &#36;{" "}
-                    {new Intl.NumberFormat("es-ES").format(
-                      producto.valorUnitario
-                    )}
-                  </td>
-                  <td>{producto.estado}</td>
-                  <td>
-                    <button
-                      className="btn-editar"
-                      onClick={() => this.seleccionarProducto(producto)}
-                    >
-                      <Icon.Edit2 size={20} />
-                    </button>
-                    <button className="btn-eliminar">
-                      <Icon.Trash2 size={20} />
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        {/* <form className="form-group">
+        <form className="form-group">
           <label htmlFor="id">ID</label>
           <input
             className="form-control"
@@ -193,27 +123,15 @@ class CrudTable extends Component {
             <option value="Disponible">Disponible</option>
             <option value="No disponible">No disponible</option>
           </select>
-        </form> */}
-        {/* <div>
-          {this.state.tipoModal === "insertar" ? (
-            <button
-              className="btn-insertar"
-              onClick={() => this.peticionPost()}
-            >
-              Insertar
-            </button>
-          ) : (
-            <button
-              className="btn-actualizar"
-              onClick={() => this.peticionPut()}
-            >
-              Actualizar
-            </button>
-          )}
-        </div> */}
+        </form>
+        <div>
+          <button className="btn-insertar" onClick={() => this.peticionPost()}>
+            Guardar
+          </button>
+        </div>
       </div>
     );
   }
 }
 
-export default CrudTable;
+export default CrudForm;

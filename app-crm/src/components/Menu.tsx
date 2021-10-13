@@ -48,13 +48,13 @@ const Menu = () => {
                     <li>
                         <NavLink to="/maestro-productos" activeClassName="active">
                             <span className="icon"><Icon.Package /></span>
-                            <span className="title">Registros de Productos</span>
+                            <span className="title">Registro de Productos</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/maestro-ventas" activeClassName="active">
                             <span className="icon"><Icon.ShoppingBag /></span>
-                            <span className="title">Registros de Ventas</span>
+                            <span className="title">Registro de Ventas</span>
                         </NavLink>
                     </li>
                     <li>

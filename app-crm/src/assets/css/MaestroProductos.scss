@@ -1,9 +1,12 @@
 @import "base";
 
+// ESTILOS BUSCADOR
 .inp-buscar{
   width: 400px;
   height: 40px;
+  margin-right: 50px;
   padding-left: 50px;
+  padding-right: 10px;
   font-size: 0.95em;
   border-radius: 10px;
   border: 2px solid #d3d3d3;
@@ -22,14 +25,16 @@
   border: 2px solid $color-secundario;
 }
 
+// ESTILOS TABLA
 .table {
   width: 100%;
-  font-size: 0.9em;
+  font-size: 0.85em;
   margin-bottom: 40px;
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
   outline: 1px solid #d3d3d3;
+  margin-bottom: 60px;
 }
 
 .table th {
@@ -41,9 +46,9 @@
 }
 
 .table tr {
-  height: 60px;
+  height: 50px;
   background: #fbfbfb;
-  color: #4e4e4e;
+  color: #464545;
 }
 .table tr:nth-child(even) {
   background-color: #eeeeee;
@@ -56,7 +61,7 @@
 
 .table td {
   padding-left: 2em;
-  height: 60px;
+  height: 50px;
   vertical-align: middle;
 }
 
@@ -91,4 +96,14 @@
 
 .btn-eliminar:hover {
   color: #e20000;
+}
+
+// ESTILOS BOTON REGISTRAR
+.btn-registrar{
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-family: $fuente-secundaria;
+  font-size: 0.9em;
+  background: $color-secundario;
+  color: $white;
 }
