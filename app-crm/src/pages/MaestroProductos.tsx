@@ -1,6 +1,6 @@
 import React from "react";
 import * as Icon from "react-feather";
-import CrudTable from "../components/CrudTable";
+import CrudTable from "../components/TableProductos";
 import Menu from "../components/Menu";
 
 const MaestroProductos = () => {

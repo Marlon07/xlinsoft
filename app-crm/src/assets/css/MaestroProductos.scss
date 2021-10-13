@@ -107,3 +107,26 @@
   background: $color-secundario;
   color: $white;
 }
+
+// MODAL
+.modal{
+  position: absolute;
+  width: 100vw;
+  height: 60vmax;
+  background: rgba(70, 69, 69, 0.275);
+}
+
+.modal-content{
+  position: fixed;
+  display: grid;
+  align-items: center;
+  top: 100px;
+  left: 35vw;
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  border-radius: 10px;
+  border-top: 5px solid #e20000;
+  background:$white;
+}
+

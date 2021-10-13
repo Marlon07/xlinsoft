@@ -3,19 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 import * as Icon from 'react-feather'
 import '../assets/css/Menu.scss';
 import LogoMenu from '../assets/images/logo-menu.svg';
-// import Inicio from '../pages/Inicio';
-// import Usuarios from '../pages/Usuarios';
 
 const Menu = () => {
-
-    // const list = document.querySelectorAll('.list');
-    // function activeLink(this: any) {
-    //     list.forEach((item) =>
-    //         item.classList.remove('active'));
-    //     this.classList.add('active');
-    // }
-    // list.forEach((item) =>
-    //     item.addEventListener('click',activeLink));
 
     return (
         <div className="container">

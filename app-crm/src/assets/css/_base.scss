@@ -9,6 +9,7 @@ $white: #ffffff;
 $orange: #eb7815;
 $green: #63bd0f;
 $fuente-titulo: 'Lato';
+$fuente-pricipal: 'Open Sans';
 $fuente-secundaria: 'Open Sans-SemiBold';
 $fuente-logo: 'RobotoMono';
 
@@ -30,5 +31,5 @@ $fuente-logo: 'RobotoMono';
 }
 
 .App {
-    font-family: "Open Sans";
+    font-family: $fuente-pricipal;
 }

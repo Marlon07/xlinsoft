@@ -4,12 +4,15 @@ import Global from "../Global";
 import "../assets/css/MaestroProductos.scss";
 import * as Icon from "react-feather";
 import { NavLink } from "react-router-dom";
+// import "bootstrap/dist/css/bootstrap.min.css"
+import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
-const url = Global.urlproductos;
+const url = Global.baseURL;
 
-class CrudTable extends Component {
+class TableProductos extends Component {
   state = {
     data: [],
+    modalEliminar: false,
     form: {
       id: "",
       nombre: "",
@@ -46,9 +49,26 @@ class CrudTable extends Component {
   };
 
   peticionPut = () => {
-    axios.put(url + this.state.form.id, this.state.form).then((response) => {
-      this.cargarProductos();
-    });
+    axios
+      .put(url + this.state.form.id, this.state.form)
+      .then((response) => {
+        this.cargarProductos();
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  peticionDelete = () => {
+    axios
+      .delete(url + "/" + this.state.form.id)
+      .then((response) => {
+        this.setState({ modalEliminar: false });
+        this.cargarProductos();
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   seleccionarProducto = (producto) => {
@@ -131,7 +151,13 @@ class CrudTable extends Component {
                     >
                       <Icon.Edit2 size={20} />
                     </button>
-                    <button className="btn-eliminar">
+                    <button
+                      className="btn-eliminar"
+                      onClick={() => {
+                        this.seleccionarProducto(producto);
+                        this.setState({ modalEliminar: true });
+                      }}
+                    >
                       <Icon.Trash2 size={20} />
                     </button>
                   </td>
@@ -140,6 +166,24 @@ class CrudTable extends Component {
             })}
           </tbody>
         </table>
+        <Modal className="modal" isOpen={this.state.modalEliminar}>
+          {/* <div className="overlay"> */}
+            <ModalBody>
+              Está seguro que desea eliminar el producto <br /> {form && form.nombre}
+            </ModalBody>
+            <ModalFooter>
+              <button className="btn-si" onClick={() => this.peticionDelete()}>
+                Si
+              </button>
+              <button
+                className="btn-no"
+                onClick={() => this.setState({ modalEliminar: false })}
+              >
+                No
+              </button>
+            </ModalFooter>
+          {/* </div> */}
+        </Modal>
         {/* <form className="form-group">
           <label htmlFor="id">ID</label>
           <input
@@ -216,4 +260,4 @@ class CrudTable extends Component {
   }
 }
 
-export default CrudTable;
+export default TableProductos;

@@ -1,5 +1,5 @@
 var Global = {
-    urlproductos: "http://localhost:5000/productos"
+    baseURL: "http://localhost:5000/productos"
 }
 
 export default Global;
