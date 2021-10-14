@@ -36,82 +36,32 @@
       "estado": "Disponible"
     },
     {
-      "id": 6,
-      "nombre": "Memoria Ram spectrix",
-      "descripcion": "Cuenta con una amplia gama de frecuencia de 3200 MHz y admite los perfiles Intel® XMP 2.0.",
-      "valorUnitario": 200000,
-      "estado": "Disponible"
-    },
-    {
-      "id": 7,
-      "nombre": "Board arktek",
-      "descripcion": "Placa madre para procesadores intel",
-      "valorUnitario": 300000,
-      "estado": "Disponible"
-    },
-    {
-      "nombre": "qweq",
-      "descripcion": "qeqwe",
-      "valorUnitario": "234",
+      "nombre": "Teclado DURGOD",
+      "descripcion": "Teclado TKL retroiluminado color blanco",
+      "valorUnitario": "465000",
       "estado": "No disponible",
       "tipoModal": "",
-      "id": 12
+      "id": 6
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Juan Francisco Quintero",
+      "estado": "Autorizado",
+      "perfil": "Administrador",
+      "id": 1
     },
     {
-      "nombre": "producto99",
-      "descripcion": "asjdahjsdkajhds",
-      "valorUnitario": "8475875",
-      "estado": "No disponible",
-      "tipoModal": "",
-      "id": 19
+      "nombre": "Felipe Alejandro Chavez",
+      "estado": "Autorizado",
+      "perfil": "Administrador",
+      "id": 2
     },
     {
-      "nombre": "producto87334",
-      "descripcion": "asjdhasdjahgds",
-      "valorUnitario": "873487834",
-      "estado": "",
-      "tipoModal": "",
-      "id": 20
-    },
-    {
-      "nombre": "jasjkdhas",
-      "descripcion": "hasgdjhad",
-      "valorUnitario": "326476",
-      "estado": "",
-      "tipoModal": "",
-      "id": 21
-    },
-    {
-      "nombre": "iuywiueyr",
-      "descripcion": "asdjhasd",
-      "valorUnitario": "32424",
-      "estado": "Disponible",
-      "tipoModal": "",
-      "id": 22
-    },
-    {
-      "nombre": "producto 10",
-      "descripcion": "prothjshfjsjhdf",
-      "valorUnitario": "8498598",
-      "estado": "Disponible",
-      "tipoModal": "",
-      "id": 23
-    },
-    {
-      "nombre": "sdsd",
-      "descripcion": "sdsdsd",
-      "valorUnitario": "34324",
-      "estado": "",
-      "tipoModal": "",
-      "id": 24
-    },
-    {
-      "nombre": "asdasdl",
-      "descripcion": "adasdasd",
-      "valorUnitario": "3334434",
-      "estado": "",
-      "tipoModal": "",
-      "id": 25
+      "nombre": "Adriana Marcela Díaz",
+      "estado": "Pendiente",
+      "perfil": "Vendedor",
+      "id": 3
     }
   ]
 }

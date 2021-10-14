@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../Global";
-import "../assets/css/MaestroProductos.scss";
-import "../assets/css/FormProductos.scss";
+import "../assets/css/css-productos/FormProductos.scss";
 import ilustracion from "../assets/images/productos.svg";
-import * as Icon from "react-feather";
-import { NavLink } from "react-router-dom";
 
-const url = Global.urlproductos;
+const url = Global.baseURL;
 
 class FormProductos extends Component {
   state = {
@@ -34,6 +31,7 @@ class FormProductos extends Component {
         console.log(error.message);
       });
   };
+
 
   peticionPut = () => {
     axios.put(url + this.state.form.id, this.state.form).then((response) => {
@@ -86,7 +84,7 @@ class FormProductos extends Component {
               onChange={this.handleChange}
               value={form ? form.id : this.state.data.length + 1}
             /> */}
-
+            
             <label className="label" htmlFor="nombre">
               Nombre
             </label>

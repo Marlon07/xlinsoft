@@ -1,28 +1,18 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../Global";
-import "../assets/css/css-productos/TableProductos.scss";
+import "../assets/css/Usuarios.scss";
 import * as Icon from "react-feather";
-import { NavLink } from "react-router-dom";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
-const url = Global.baseURL;
+const url = Global.userURL;
 
-class TableProductos extends Component {
+class TableUsuarios extends Component {
   state = {
     data: [],
-    modalEliminar: false,
-    form: {
-      id: "",
-      nombre: "",
-      descripcion: "",
-      valorUnitario: "",
-      estado: "",
-      tipoModal: "",
-    },
   };
 
-  cargarProductos = () => {
+  cargarUsuarios = () => {
     axios
       .get(url)
       .then((response) => {
@@ -51,22 +41,21 @@ class TableProductos extends Component {
       .delete(url + "/" + this.state.form.id)
       .then((response) => {
         this.setState({ modalEliminar: false });
-        this.cargarProductos();
+        this.cargarUsuarios();
       })
       .catch((error) => {
         console.log(error.message);
       });
   };
 
-  seleccionarProducto = (producto) => {
+  seleccionarUsuario = (usuario) => {
     this.setState({
       tipoModal: "actualizar",
       form: {
-        id: producto.id,
-        nombre: producto.nombre,
-        descripcion: producto.descripcion,
-        valorUnitario: producto.valorUnitario,
-        estado: producto.estado,
+        id: usuario.id,
+        nombre: usuario.nombre,
+        estado: usuario.estado,
+        perfil: usuario.perfil,
       },
     });
   };
@@ -82,7 +71,7 @@ class TableProductos extends Component {
   };
 
   componentDidMount() {
-    this.cargarProductos();
+    this.cargarUsuarios();
   }
 
   render() {
@@ -95,53 +84,37 @@ class TableProductos extends Component {
             <Icon.Search size={20} />
           </span>
           <input className="inp-buscar" type="search" placeholder="Buscar" />
-          <NavLink
-            to="/productos"
-            activeClassName="active"
-            // onClick={() => {
-            //   this.setState({ form: null, tipoModal: "insertar" });
-            // }}
-          >
-            <span className="btn-registrar">Registrar Nuevo</span>
-          </NavLink>
         </div>
 
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Valor Unitario</th>
-              <th>Estado</th>
-              <th>Acciones</th>
+              <th className="th2">ID</th>
+              <th className="th2">Nombre</th>
+              <th className="th2">Estado</th>
+              <th className="th2">Perfil</th>
+              <th className="th2">Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.data.map((producto, i) => {
+            {this.state.data.map((usuario, i) => {
               return (
                 <tr key={i}>
-                  <td>{producto.id}</td>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.descripcion}</td>
-                  <td>
-                    &#36;{" "}
-                    {new Intl.NumberFormat("es-ES").format(
-                      producto.valorUnitario
-                    )}
-                  </td>
-                  <td>{producto.estado}</td>
-                  <td>
+                  <td className="td2">{usuario.id}</td>
+                  <td className="td2">{usuario.nombre}</td>
+                  <td className="td2">{usuario.estado}</td>
+                  <td className="td2">{usuario.perfil}</td>
+                  <td className="td2">
                     <button
                       className="btn-editar"
-                      onClick={() => this.seleccionarProducto(producto)}
+                      onClick={() => this.seleccionarUsuario(usuario)}
                     >
                       <Icon.Edit2 size={20} />
                     </button>
                     <button
                       className="btn-eliminar"
                       onClick={() => {
-                        this.seleccionarProducto(producto);
+                        this.seleccionarUsuario(usuario);
                         this.setState({ modalEliminar: true });
                       }}
                     >
@@ -155,12 +128,12 @@ class TableProductos extends Component {
         </table>
 
         <Modal className="modal" isOpen={this.state.modalEliminar}>
-          <ModalHeader>Eliminar Producto</ModalHeader>
+          <ModalHeader>Eliminar Usuario</ModalHeader>
           <span className="btn-trash">
             <Icon.Trash2 size={40} />
           </span>
           <ModalBody>
-            Está seguro que desea eliminar el producto {form && form.nombre}
+            Está seguro que desea eliminar el usuario {form && form.nombre}
           </ModalBody>
           <ModalFooter>
             <button
@@ -180,4 +153,4 @@ class TableProductos extends Component {
   }
 }
 
-export default TableProductos;
+export default TableUsuarios;
