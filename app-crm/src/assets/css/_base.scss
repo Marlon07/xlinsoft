@@ -6,7 +6,10 @@
 $color-primario: #43DEE2;
 $color-secundario: #173e63;
 $white: #ffffff;
+$orange: #eb7815;
+$green: #63bd0f;
 $fuente-titulo: 'Lato';
+$fuente-pricipal: 'Open Sans';
 $fuente-secundaria: 'Open Sans-SemiBold';
 $fuente-logo: 'RobotoMono';
 
@@ -18,6 +21,15 @@ $fuente-logo: 'RobotoMono';
     text-decoration: none;
 }
 
+*::-webkit-scrollbar {
+    width: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #adadad;
+}
+
 .App {
-    font-family: "Open Sans";
+    font-family: $fuente-pricipal;
 }
