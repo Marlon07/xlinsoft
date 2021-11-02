@@ -3,19 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 import * as Icon from 'react-feather'
 import '../assets/css/Menu.scss';
 import LogoMenu from '../assets/images/logo-menu.svg';
-// import Inicio from '../pages/Inicio';
-// import Usuarios from '../pages/Usuarios';
 
 const Menu = () => {
-
-    // const list = document.querySelectorAll('.list');
-    // function activeLink(this: any) {
-    //     list.forEach((item) =>
-    //         item.classList.remove('active'));
-    //     this.classList.add('active');
-    // }
-    // list.forEach((item) =>
-    //     item.addEventListener('click',activeLink));
 
     return (
         <div className="container">
@@ -36,13 +25,13 @@ const Menu = () => {
                     <li>
                         <NavLink to="/productos" activeClassName="active">
                             <span className="icon"><Icon.Box /></span>
-                            <span className="title">Productos</span>
+                            <span className="title">Registrar Producto</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/ventas" activeClassName="active">
                             <span className="icon"><Icon.ShoppingCart /></span>
-                            <span className="title">Ventas</span>
+                            <span className="title">Registrar Venta</span>
                         </NavLink>
                     </li>
                     <li>
