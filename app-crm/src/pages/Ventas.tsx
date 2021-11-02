@@ -3,6 +3,7 @@ import Menu from '../components/Menu'
 import * as Icon from 'react-feather'
 import logo from '../assets/images/reg_ventas.svg';
 import "../assets/css/Reg_ventas.scss"
+<<<<<<< HEAD
 import { Formik, Form } from 'formik';
 import ProfileSchema from './ProfileSchema';
 import Global from "../Global";
@@ -10,6 +11,9 @@ import Global from "../Global";
 
 const url = Global.ventasURL;
 //, Field, ErrorMessage
+=======
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+>>>>>>> origin/development
 
 const Ventas = () => {
     return (
@@ -29,6 +33,7 @@ const Ventas = () => {
                         <Formik
                             //initialValues={{ vendedor: 'vendedor', valorTotal: 'valorTotal', precioUnitario: 'precioUnitario', referenciaProducto: 'referenciaProducto', cantidad: 'cantidad',  identificacion: 'identificacion', nombre: 'nombre' }}
                             initialValues={{ vendedor: '', valorTotal: '', precioUnitario: '', referenciaProducto: '', cantidad: '', identificacion: '', nombre: '' }}
+<<<<<<< HEAD
                             validationSchema={ProfileSchema}
 
                             onSubmit={(values, { setSubmitting }) => {
@@ -156,6 +161,29 @@ const Ventas = () => {
     
                                     
                                     {/* <div className="col-1">
+=======
+                            validate={values => {
+                                // const errors = {};
+                                // if (!values.vendedor) {
+                                //     errors.vendedor = 'Required';
+                                // } else if (
+                                // !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.vendedor)
+                                // ) {
+                                // errors.vendedor = 'Invalid email address';
+                                // }
+                                // return errors;
+                            }}
+                            onSubmit={(values, { setSubmitting }) => {
+                                setTimeout(() => {
+                                    alert(JSON.stringify(values, null, 2));
+                                    setSubmitting(false);
+                                }, 400);
+                            }}
+                        >
+                            {({ isSubmitting }) => (
+                                <Form className="formulario">
+                                    <div className="col-1">
+>>>>>>> origin/development
                                         <label className="label">Vendedor</label>
                                         <Field className="input" type="vendedor" name="vendedor" />
                                         <ErrorMessage name="vendedor" component="div" />
@@ -180,6 +208,7 @@ const Ventas = () => {
                                         <label className="label">Nombre</label>
                                         <Field className="input" type="nombre" name="nombre" />
                                         <ErrorMessage name="nombre" component="div" />
+<<<<<<< HEAD
                                     </div> */}
                                     <div>
                                         <button className="btn-guardar" type="submit" disabled={isSubmitting}>
@@ -187,6 +216,15 @@ const Ventas = () => {
                                         </button>
                                         <button className="btn-cancelar" type="reset" disabled={isSubmitting}>
                                             {isSubmitting ? 'Cancelando' : 'Cancelar'}
+=======
+                                    </div>
+                                    <div>
+                                        <button className="btn-guardar" type="submit" disabled={isSubmitting}>
+                                            Guardar
+                                        </button>
+                                        <button className="btn-cancelar" type="reset" disabled={isSubmitting}>
+                                            Cancelar
+>>>>>>> origin/development
                                         </button>
                                     </div>
                                 </Form>

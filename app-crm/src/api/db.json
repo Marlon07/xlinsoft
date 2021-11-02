@@ -1,6 +1,7 @@
 {
   "productos": [
     {
+<<<<<<< HEAD
       "nombre": "Paraco13",
       "descripcion": "Usb dark 3.0",
       "valorUnitario": "35000",
@@ -15,6 +16,65 @@
       "estado": "Disponible",
       "tipoModal": "",
       "id": 2
+=======
+      "id": 1,
+      "nombre": "Nvidia RTX 2080 S",
+      "descripcion": "Tarjeta gráfica para videojuegos",
+      "valorUnitario": 3350000,
+      "estado": "No disponible"
+    },
+    {
+      "id": 2,
+      "nombre": "Monitor LED QHD",
+      "descripcion": "Pantalla de 75Hz para mejor fluidez",
+      "valorUnitario": 926000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 3,
+      "nombre": "Diadema Gamer Redragon",
+      "descripcion": "Este auricular, de sonido 7.1 con USB, garantizan la mejor calidad de sonido en nuestros diafragmas de 40 mm con imanes de neodimio, ideales en la construcción de periféricos de sonido.",
+      "valorUnitario": 171000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 4,
+      "nombre": "Teclado redragon k630w",
+      "descripcion": "El interruptor azul táctil distintivo ofrece una respuesta de escritura auditiva fantástica.",
+      "valorUnitario": 176000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 5,
+      "nombre": "Nvidia RTX 3080 Ti",
+      "descripcion": "Tarjeta grafica para videojuegos gama alta",
+      "valorUnitario": 13500000,
+      "estado": "Disponible"
+    },
+    {
+      "nombre": "Teclado DURGOD",
+      "descripcion": "Teclado TKL retroiluminado color blanco",
+      "valorUnitario": "465000",
+      "estado": "No disponible",
+      "tipoModal": "",
+      "id": 6
+    },
+    {
+      "nombre": "",
+      "descripcion": "",
+      "valorUnitario": "",
+      "estado": "",
+      "tipoModal": "",
+      "id": 7
+    },
+    {
+      "nombre": "",
+      "descripcion": "",
+      "valorUnitario": "",
+      "estado": "",
+      "tipoModal": "",
+      "id": 8
+>>>>>>> origin/development
     }
   ],
   "usuarios": [
@@ -36,6 +96,7 @@
       "perfil": "Vendedor",
       "id": 3
     }
+<<<<<<< HEAD
   ],
   "ventas": [
     {
@@ -78,5 +139,7 @@
       "nombre": "Paraco14",
       "id": 4
     }
+=======
+>>>>>>> origin/development
   ]
 }
