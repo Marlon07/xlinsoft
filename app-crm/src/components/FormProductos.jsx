@@ -19,6 +19,18 @@ class FormProductos extends Component {
     },
   };
 
+  cargarProductos = () => {
+    axios
+      .get(url)
+      .then((response) => {
+        // console.log(res.data);
+        this.setState({ data: response.data });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   // Añadir producto
   peticionPost = async () => {
     delete this.state.form.id;
@@ -63,7 +75,7 @@ class FormProductos extends Component {
   };
 
   // componentDidMount() {
-  //   this.peticionPost();
+  //   this.peticionGet();
   // }
 
   render() {

@@ -22,11 +22,15 @@ class TableProductos extends Component {
     },
   };
 
+  // const [usuarios, setUsuarios] = useState([]);
+  // const [tablaUsaurios, setTablaUsuarios] = useState([]);
+  // const [busqueda, setBusqueda] = useState("");
+
   cargarProductos = () => {
     axios
       .get(url)
       .then((response) => {
-        // console.log(res.data);
+        // console.log(response.data);
         this.setState({ data: response.data });
       })
       .catch((error) => {
