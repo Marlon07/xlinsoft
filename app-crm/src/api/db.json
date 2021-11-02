@@ -1,6 +1,22 @@
 {
   "productos": [
     {
+<<<<<<< HEAD
+      "nombre": "Paraco13",
+      "descripcion": "Usb dark 3.0",
+      "valorUnitario": "35000",
+      "estado": "Disponible",
+      "tipoModal": "",
+      "id": 1
+    },
+    {
+      "nombre": "Paraco13",
+      "descripcion": "teclado smart note",
+      "valorUnitario": "24000",
+      "estado": "Disponible",
+      "tipoModal": "",
+      "id": 2
+=======
       "id": 1,
       "nombre": "Nvidia RTX 2080 S",
       "descripcion": "Tarjeta gráfica para videojuegos",
@@ -58,6 +74,7 @@
       "estado": "",
       "tipoModal": "",
       "id": 8
+>>>>>>> origin/development
     }
   ],
   "usuarios": [
@@ -79,5 +96,50 @@
       "perfil": "Vendedor",
       "id": 3
     }
+<<<<<<< HEAD
+  ],
+  "ventas": [
+    {
+      "vendedor": "Juan Francisco Quintero",
+      "valorTotal": "5000",
+      "precioUnitario": "1000",
+      "referenciaProducto": "ULN234",
+      "cantidad": "5",
+      "identificacion": "1094259425",
+      "nombre": "Nickollas",
+      "id": 1
+    },
+    {
+      "vendedor": "Pacho Quintero",
+      "valorTotal": "2000",
+      "precioUnitario": "500",
+      "referenciaProducto": "UL23",
+      "cantidad": "4",
+      "identificacion": "1094239435",
+      "nombre": "Brayan",
+      "id": 2
+    },
+    {
+      "vendedor": "Patricia",
+      "valorTotal": "1000",
+      "precioUnitario": "200",
+      "referenciaProducto": "U4",
+      "cantidad": "5",
+      "identificacion": "1000000005",
+      "nombre": "Natasha",
+      "id": 3
+    },
+    {
+      "vendedor": "Nicolasprco",
+      "valorTotal": "3000",
+      "precioUnitario": "1000",
+      "referenciaProducto": "adfrw2",
+      "cantidad": "92",
+      "identificacion": "1094279438",
+      "nombre": "Paraco14",
+      "id": 4
+    }
+=======
+>>>>>>> origin/development
   ]
 }

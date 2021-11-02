@@ -30,7 +30,11 @@ class FormProductos extends Component {
         console.log(error.message);
       });
   };
+<<<<<<< HEAD
+  
+=======
 
+>>>>>>> origin/development
   // Añadir producto
   peticionPost = async () => {
     delete this.state.form.id;
@@ -75,7 +79,11 @@ class FormProductos extends Component {
   };
 
   // componentDidMount() {
+<<<<<<< HEAD
+  //   this.peticionPost();
+=======
   //   this.peticionGet();
+>>>>>>> origin/development
   // }
 
   render() {
