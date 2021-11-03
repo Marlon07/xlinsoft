@@ -107,6 +107,7 @@ class FormProductos extends Component {
               id="nombre"
               onChange={this.handleChange}
               value={form ? form.nombre : ""}
+              required
             />
 
             <label className="label" htmlFor="descripcion">
