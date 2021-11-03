@@ -13,6 +13,12 @@
     height: 100px !important;
     font-family: $fuente-pricipal;
     font-size: 1em !important;
+    resize: none;
+    border-radius: 15px;
+    border: none;
+    background: #F0F0F0;
+    padding: 15px;
+    margin-bottom: 30px;
 }
 
 .caja{

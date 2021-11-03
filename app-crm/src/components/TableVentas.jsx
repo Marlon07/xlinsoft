@@ -1,28 +1,31 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Global from "../Global";
-import "../assets/css/css-productos/TableProductos.scss";
+import "../assets/css/css-ventas/TableVentas.scss";
 import * as Icon from "react-feather";
 import { NavLink } from "react-router-dom";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
-const url = Global.baseURL;
+const url = Global.ventasURL;
 
-class TableProductos extends Component {
+class TableVentas extends Component {
   state = {
     data: [],
     modalEliminar: false,
     form: {
-      id: "",
+     
+      vendedor: "",
+      valorTotal: "",
+      precioUnitario: "",
+      referenciaProducto: "",
+      cantidad: "",
+      identificacion: "",
       nombre: "",
-      descripcion: "",
-      valorUnitario: "",
-      estado: "",
       tipoModal: "",
     },
   };
 
-  cargarProductos = () => {
+  cargarVentas = () => {
     axios
       .get(url)
       .then((response) => {
@@ -51,22 +54,25 @@ class TableProductos extends Component {
       .delete(url + "/" + this.state.form.id)
       .then((response) => {
         this.setState({ modalEliminar: false });
-        this.cargarProductos();
+        this.cargarVentas();
       })
       .catch((error) => {
         console.log(error.message);
       });
   };
 
-  seleccionarProducto = (producto) => {
+  seleccionarVenta = (venta) => {
     this.setState({
       tipoModal: "actualizar",
       form: {
-        id: producto.id,
-        nombre: producto.nombre,
-        descripcion: producto.descripcion,
-        valorUnitario: producto.valorUnitario,
-        estado: producto.estado,
+        id: venta.id,
+        vendedor: venta.vendedor,
+        valorTotal: venta.valorTotal,
+        precioUnitario: venta.precioUnitario,
+        referenciaProducto: venta.referenciaProducto,
+        cantidad: venta.cantidad,
+        identificacion: venta.identificacion,
+        nombre: venta.nombre,
       },
     });
   };
@@ -82,21 +88,20 @@ class TableProductos extends Component {
   };
 
   componentDidMount() {
-    this.cargarProductos();
+    this.cargarVentas();
   }
 
   render() {
     const { form } = this.state;
     return (
       <div>
-
         <div>
           <span className="ico-buscar">
             <Icon.Search size={20} />
           </span>
           <input className="inp-buscar" type="search" placeholder="Buscar" />
           <NavLink
-            to="/productos"
+            to="/ventas"
             activeClassName="active"
             // onClick={() => {
             //   this.setState({ form: null, tipoModal: "insertar" });
@@ -106,42 +111,62 @@ class TableProductos extends Component {
           </NavLink>
         </div>
 
-        <table className="table">
+        <table className="tab">
           <thead>
             <tr>
               <th>ID</th>
+              <th>Vendedor</th>
+              <th>Valor Total</th>
+              <th>Precio Unitario</th>
+              <th>Referencia Producto</th>
+              <th>Cantidad</th>
+              <th>Identificacion</th>
               <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Valor Unitario</th>
-              <th>Estado</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {this.state.data.map((producto, i) => {
+            {this.state.data.map((venta, i) => {
               return (
                 <tr key={i}>
-                  <td>{producto.id}</td>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.descripcion}</td>
+                  <td>{venta.id}</td>
+                  <td>{venta.vendedor}</td>
                   <td>
                     &#36;{" "}
                     {new Intl.NumberFormat("es-ES").format(
-                      producto.valorUnitario
+                      venta.valorTotal
                     )}
                   </td>
-                  <td>{producto.estado}</td>
+
+                  <td>
+                    &#36;{" "}
+                    {new Intl.NumberFormat("es-ES").format(
+                      venta.precioUnitario
+                    )}
+                  </td>
+
+                  <td>{venta.referenciaProducto}</td>
+                  
+                  <td>
+                    &#36;{" "}
+                    {new Intl.NumberFormat("es-ES").format(
+                      venta.cantidad
+                    )}
+                  </td>
+
+                  <td>{venta.identificacion}</td>
+                  <td>{venta.nombre}</td>
                   <td>
                     <button
                       className="btn-editar"
-                      onClick={() => this.seleccionarProducto(producto)}
+                      onClick={() => this.seleccionarVenta(venta)}
                     >
                       <Icon.Edit2 size={20} />
                     </button>
                     <button
                       className="btn-eliminar"
                       onClick={() => {
-                        this.seleccionarProducto(producto);
+                        this.seleccionarVenta(venta);
                         this.setState({ modalEliminar: true });
                       }}
                     >
@@ -180,4 +205,4 @@ class TableProductos extends Component {
   }
 }
 
-export default TableProductos;
+export default TableVentas;

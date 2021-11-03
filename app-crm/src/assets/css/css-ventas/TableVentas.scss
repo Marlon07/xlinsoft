@@ -1,0 +1,181 @@
+@import "../base";
+
+// ESTILOS BUSCADOR
+.inp-buscar{
+  width: 400px;
+  height: 40px;
+  margin-right: 50px;
+  margin-bottom: 40px;
+  padding-left: 50px;
+  padding-right: 10px;
+  font-size: 0.95em;
+  border-radius: 10px;
+  border: 2px solid #d3d3d3;
+  transition: all 0.2s;
+}
+
+.ico-buscar{
+  position: absolute;
+  line-height: 50px;
+  margin-left: 15px;
+  color: #a7a7a7;
+}
+
+.inp-buscar:focus{
+  outline: none;
+  border: 2px solid $color-secundario;
+}
+
+// ESTILOS TABLA
+.tab {
+  width: 100%;
+  font-size: 0.85em;
+  margin-bottom: 40px;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 1px solid #d3d3d3;
+  margin-bottom: 60px;
+}
+
+.tab th {
+  background: $color-secundario;
+  color: $white;
+  padding: 10px;
+  text-align: left;
+  padding-left: 2em;
+}
+
+.tab tr {
+  height: 50px;
+  background: #fbfbfb;
+  color: #464545;
+}
+.tab tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.tab tr:hover {
+  background-color: #bde1e2;
+  transition: all 0.2s;
+}
+
+.tab td {
+  padding-left: 2em;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.tab td:nth-child(2) {
+  width: 15%;
+}
+.tab td:nth-child(3) {
+  width: 15%;
+}
+
+.btn-editar {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-right: 15px;
+  font-size: 1px !important;
+  color: $color-secundario;
+}
+
+.btn-editar:hover {
+  color: #388be9;
+}
+
+.btn-eliminar {
+  border: none;
+  background: none;
+  color: $color-secundario;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-eliminar:hover {
+  color: #ff0052;
+}
+
+// ESTILOS BOTON REGISTRAR NUEVO
+.btn-registrar{
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-family: $fuente-secundaria;
+  font-size: 0.9em;
+  background: $color-secundario;
+  color: $white;
+}
+
+// MODAL
+.modal{
+  position: absolute;
+  width: 100vw;
+  height: 60vmax;
+  background: rgba(70, 69, 69, 0.275);
+}
+
+.modal-content{
+  position: fixed;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  top: 100px;
+  left: 35vw;
+  width: 500px;
+  height: 250px;
+  padding: 20px 40px 20px 120px;
+  border-radius: 10px;
+  border-top: 6px solid #ff0052;
+  background:$white;
+}
+
+.btn-trash{
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  padding: 10px 13px;
+  border-radius: 50%;
+  color: $white;
+  background: #ff0052;
+}
+
+.modal-title{
+  font-family: $fuente-titulo;
+  font-size: 1.3em;
+  color: #464545;
+}
+
+.modal-body{
+  font-family: $fuente-pricipal;
+  line-height: 30px;
+  color: #464545;
+}
+
+.btn-no{
+  font-family: $fuente-secundaria;
+  font-size: 1em;
+  width: 100px;
+  height: 40px;
+  margin-right: 40px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  color: #464545;
+  background: $white;
+  cursor: pointer;
+}
+
+.btn-si{
+  font-family: $fuente-secundaria;
+  font-size: 1em;
+  width: 80px;
+  height: 40px;
+  border-radius: 7px;
+  color: $white;
+  background: #ff0052;
+  border: none;
+  cursor: pointer;
+}
+

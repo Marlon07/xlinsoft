@@ -6,6 +6,13 @@ import ilustracion from "../assets/images/productos.svg";
 
 const url = Global.baseURL;
 
+const initialForm = {
+  nombre: "",
+  descripcion: "",
+  valorUnitario: "",
+  estado: "",
+};
+
 class FormProductos extends Component {
   state = {
     data: [],
@@ -44,7 +51,6 @@ class FormProductos extends Component {
       });
   };
 
-
   peticionPut = () => {
     axios.put(url + this.state.form.id, this.state.form).then((response) => {
       this.cargarProductos();
@@ -75,7 +81,7 @@ class FormProductos extends Component {
   };
 
   // componentDidMount() {
-  //   this.peticionGet();
+  //   this.peticionPost();
   // }
 
   render() {
@@ -84,19 +90,6 @@ class FormProductos extends Component {
       <div>
         <div className="contenedor">
           <form id="form1" className="form-group">
-            {/* <label className="label" htmlFor="id">
-              ID
-            </label>
-            <input
-              className="input-id"
-              type="text"
-              name="id"
-              id="id"
-              readOnly
-              onChange={this.handleChange}
-              value={form ? form.id : this.state.data.length + 1}
-            /> */}
-            
             <label className="label" htmlFor="nombre">
               Nombre
             </label>
@@ -120,6 +113,7 @@ class FormProductos extends Component {
               id="descripcion"
               onChange={this.handleChange}
               value={form ? form.descripcion : ""}
+              required
             />
 
             <label className="label" htmlFor="valorUnitario">
@@ -133,6 +127,7 @@ class FormProductos extends Component {
               placeholder="$"
               onChange={this.handleChange}
               value={form ? form.valorUnitario : ""}
+              required
             />
 
             <label className="label" htmlFor="estado">
@@ -145,16 +140,23 @@ class FormProductos extends Component {
                 name="estado"
                 onChange={this.handleChange}
                 value={form.estado}
+                required
               >
-                <option>Seleccionar ...</option>
+                <option>Seleccionar ...</option>nombre
                 <option value="Disponible">Disponible</option>
-                <option value="No disponible">
-                  No disponible
-                </option>
+                <option value="No disponible">No disponible</option>
               </select>
             </div>
-            <button className="btn-guardar" onClick={() => this.peticionPost()}>
+            <button
+              className="btn-guardar"
+              type="submit"
+              onClick={() => this.peticionPost()}
+            >
               Guardar
+            </button>
+
+            <button type="reset">
+              Cancelar
             </button>
           </form>
           <img
