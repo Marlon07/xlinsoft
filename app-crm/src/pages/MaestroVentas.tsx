@@ -20,9 +20,6 @@ const MaestroVentas = () => {
           <h1>Registro de Ventas</h1>
           {/* <Search /> */}
           <CrudTable />
-          <p>Acceso directo al modulo de Registro de Ventas.</p>
-          <p><Link to="ventas">&gt;&gt; Agregar Venta</Link></p>
-          
           <p></p>
         </div>
       </div>

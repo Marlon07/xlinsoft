@@ -21,24 +21,14 @@
     color: $color-secundario;
 }
 
-<<<<<<< HEAD
 .input{
     width: 300px;
     height: 50px;
-=======
-.input, .input-id, .textarea{
-    width: 300px;
-    height: 40px;
->>>>>>> origin/development
     margin-bottom: 30px;
     padding: 20px;
     font-size: 1em;
     background: #F0F0F0;
-<<<<<<< HEAD
     border-radius: 15px;
-=======
-    border-radius: 10px;
->>>>>>> origin/development
     border: none;
 }
 
@@ -51,11 +41,7 @@
     grid-template-columns: auto auto;
     
     h4{
-<<<<<<< HEAD
         margin-top: 45px;
-=======
-        margin-top: 35px;
->>>>>>> origin/development
         margin-bottom: 45px;
         font-family: $fuente-secundaria;
         color: $color-secundario;
@@ -63,13 +49,8 @@
 }
 
 .btn-guardar{
-<<<<<<< HEAD
     width: 220px;
     height: 50px;
-=======
-    width: 200px;
-    height: 40px;
->>>>>>> origin/development
     margin-top: 50px;
     margin-right: 75px;
     font-family: $fuente-secundaria;
@@ -79,7 +60,6 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
-<<<<<<< HEAD
     transition: all 0.5s;
 }
 
@@ -90,18 +70,6 @@
 .btn-cancelar{
     width: 162px;
     height: 50px;
-=======
-    transition: all 0.3s;
-}
-
-.btn-guardar:hover{
-    background: $green;
-}
-
-.btn-cancelar{
-    width: 150px;
-    height: 40px;
->>>>>>> origin/development
     font-family: 'Open Sans';
     font-size: 1em;
     color: $color-secundario;
@@ -109,20 +77,10 @@
     border: 2px solid $color-secundario;
     border-radius: 10px;
     cursor: pointer;
-<<<<<<< HEAD
     transition: all 0.5s;
 }
 
 .btn-cancelar:hover{
     border: 2px solid #eb7815;
     color: #eb7815;
-=======
-    transition: all 0.3s;
-}
-
-.btn-cancelar:hover{
-    border: 2px solid $orange;
-    color: $orange;
-    background: #fff0e3;
->>>>>>> origin/development
 }

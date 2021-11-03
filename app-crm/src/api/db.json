@@ -1,22 +1,6 @@
 {
   "productos": [
     {
-<<<<<<< HEAD
-      "nombre": "Paraco13",
-      "descripcion": "Usb dark 3.0",
-      "valorUnitario": "35000",
-      "estado": "Disponible",
-      "tipoModal": "",
-      "id": 1
-    },
-    {
-      "nombre": "Paraco13",
-      "descripcion": "teclado smart note",
-      "valorUnitario": "24000",
-      "estado": "Disponible",
-      "tipoModal": "",
-      "id": 2
-=======
       "id": 1,
       "nombre": "Nvidia RTX 2080 S",
       "descripcion": "Tarjeta gráfica para videojuegos",
@@ -58,23 +42,6 @@
       "estado": "No disponible",
       "tipoModal": "",
       "id": 6
-    },
-    {
-      "nombre": "",
-      "descripcion": "",
-      "valorUnitario": "",
-      "estado": "",
-      "tipoModal": "",
-      "id": 7
-    },
-    {
-      "nombre": "",
-      "descripcion": "",
-      "valorUnitario": "",
-      "estado": "",
-      "tipoModal": "",
-      "id": 8
->>>>>>> origin/development
     }
   ],
   "usuarios": [
@@ -96,7 +63,6 @@
       "perfil": "Vendedor",
       "id": 3
     }
-<<<<<<< HEAD
   ],
   "ventas": [
     {
@@ -128,18 +94,6 @@
       "identificacion": "1000000005",
       "nombre": "Natasha",
       "id": 3
-    },
-    {
-      "vendedor": "Nicolasprco",
-      "valorTotal": "3000",
-      "precioUnitario": "1000",
-      "referenciaProducto": "adfrw2",
-      "cantidad": "92",
-      "identificacion": "1094279438",
-      "nombre": "Paraco14",
-      "id": 4
     }
-=======
->>>>>>> origin/development
   ]
 }
