@@ -110,72 +110,72 @@
 }
 
 // MODAL
-.modal{
-  position: absolute;
-  width: 100vw;
-  height: 60vmax;
-  background: rgba(70, 69, 69, 0.275);
-}
+// .modal{
+//   position: absolute;
+//   width: 100vw;
+//   height: 60vmax;
+//   background: rgba(70, 69, 69, 0.275);
+// }
 
-.modal-content{
-  position: fixed;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  top: 100px;
-  left: 35vw;
-  width: 500px;
-  height: 250px;
-  padding: 20px 40px 20px 120px;
-  border-radius: 10px;
-  border-top: 6px solid #ff0052;
-  background:$white;
-}
+// .modal-content{
+//   position: fixed;
+//   display: grid;
+//   align-items: center;
+//   justify-content: center;
+//   top: 100px;
+//   left: 35vw;
+//   width: 500px;
+//   height: 250px;
+//   padding: 20px 40px 20px 120px;
+//   border-radius: 10px;
+//   border-top: 6px solid #ff0052;
+//   background:$white;
+// }
 
-.btn-trash{
-  position: absolute;
-  top: 40px;
-  left: 30px;
-  padding: 10px 13px;
-  border-radius: 50%;
-  color: $white;
-  background: #ff0052;
-}
+// .btn-trash{
+//   position: absolute;
+//   top: 40px;
+//   left: 30px;
+//   padding: 10px 13px;
+//   border-radius: 50%;
+//   color: $white;
+//   background: #ff0052;
+// }
 
-.modal-title{
-  font-family: $fuente-titulo;
-  font-size: 1.3em;
-  color: #464545;
-}
+// .modal-title{
+//   font-family: $fuente-titulo;
+//   font-size: 1.3em;
+//   color: #464545;
+// }
 
-.modal-body{
-  font-family: $fuente-pricipal;
-  line-height: 30px;
-  color: #464545;
-}
+// .modal-body{
+//   font-family: $fuente-pricipal;
+//   line-height: 30px;
+//   color: #464545;
+// }
 
-.btn-no{
-  font-family: $fuente-secundaria;
-  font-size: 1em;
-  width: 100px;
-  height: 40px;
-  margin-right: 40px;
-  border-radius: 7px;
-  border: 1px solid gray;
-  color: #464545;
-  background: $white;
-  cursor: pointer;
-}
+// .btn-no{
+//   font-family: $fuente-secundaria;
+//   font-size: 1em;
+//   width: 100px;
+//   height: 40px;
+//   margin-right: 40px;
+//   border-radius: 7px;
+//   border: 1px solid gray;
+//   color: #464545;
+//   background: $white;
+//   cursor: pointer;
+// }
 
-.btn-si{
-  font-family: $fuente-secundaria;
-  font-size: 1em;
-  width: 80px;
-  height: 40px;
-  border-radius: 7px;
-  color: $white;
-  background: #ff0052;
-  border: none;
-  cursor: pointer;
-}
+// .btn-si{
+//   font-family: $fuente-secundaria;
+//   font-size: 1em;
+//   width: 80px;
+//   height: 40px;
+//   border-radius: 7px;
+//   color: $white;
+//   background: #ff0052;
+//   border: none;
+//   cursor: pointer;
+// }
 

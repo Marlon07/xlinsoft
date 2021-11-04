@@ -36,12 +36,19 @@
       "estado": "Disponible"
     },
     {
-      "nombre": "Teclado DURGOD",
-      "descripcion": "Teclado TKL retroiluminado color blanco",
-      "valorUnitario": "465000",
-      "estado": "No disponible",
+      "id": 11,
+      "nombre": "porducto81818818181",
+      "descripcion": "kjashdkaskdhg",
+      "valorUnitario": "73746374",
+      "estado": "No disponible"
+    },
+    {
+      "nombre": "",
+      "descripcion": "",
+      "valorUnitario": "",
+      "estado": "",
       "tipoModal": "",
-      "id": 6
+      "id": 30
     }
   ],
   "usuarios": [
