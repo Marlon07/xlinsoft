@@ -6,12 +6,9 @@ import * as Icon from "react-feather";
 import { NavLink } from "react-router-dom";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
-const url = Global.ventasURL;
-// const [ventas, setUsuarios]= useState([]);
-// const [tablaVentas, setTablaUsuarios]= useState([]);
-// const [busqueda, setBusqueda]= useState("");
 
-class TableVentas extends Component {
+const url = Global.ventasURL;
+class Barra extends Component {
   state = {
     tablaVentas: [],
     ventas: [], 
@@ -75,9 +72,7 @@ class TableVentas extends Component {
 
   filtrar=(terminoBusqueda)=>{
     var resultadosBusqueda=this.state.tablaVentas.filter((elemento)=>{
-      if (terminoBusqueda === "") {
-        return elemento;
-      }else if(elemento.id.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()) 
+      if(elemento.id.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()) 
       || elemento.vendedor.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       || elemento.referenciaProducto.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       || elemento.identificacion.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
@@ -85,7 +80,6 @@ class TableVentas extends Component {
       ){
         return elemento;
       }
-      return false;
     });
     this.setState({ ventas: resultadosBusqueda });
   }
@@ -224,7 +218,8 @@ class TableVentas extends Component {
         </div>
       </div>
     );
-  } 
+  }                  
 }
 
-export default TableVentas;
+
+export default Barra;

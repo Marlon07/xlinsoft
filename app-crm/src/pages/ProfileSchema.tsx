@@ -18,7 +18,7 @@ const ProfileSchema = Yup.object().shape({
         .max(50, '  Muy Largo!')
         .required('  Requerido'),
     cantidad: Yup.string()
-        .min(2, '  Muy Corto!')
+        .min(1, '  Muy Corto!')
         .max(50, '  Muy Largo!')
         .required('  Requerido'),
     identificacion: Yup.string()
