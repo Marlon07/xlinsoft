@@ -86,14 +86,37 @@
       "id": 2
     },
     {
-      "vendedor": "Patricia",
-      "valorTotal": "1000",
-      "precioUnitario": "200",
-      "referenciaProducto": "U4",
-      "cantidad": "5",
-      "identificacion": "1000000005",
-      "nombre": "Natasha",
+      "vendedor": "pardo",
+      "valorTotal": "18000",
+      "precioUnitario": "9000",
+      "referenciaProducto": "at340",
+      "cantidad": "2",
+      "identificacion": "1007036219",
+      "nombre": "Amira",
       "id": 3
+<<<<<<< HEAD
+    },
+    {
+      "vendedor": "julio",
+      "valorTotal": "4500",
+      "precioUnitario": "1500",
+      "referenciaProducto": "HTF34",
+      "cantidad": "3",
+      "identificacion": "123456789",
+      "nombre": "Linis",
+      "id": 4
+    },
+    {
+      "vendedor": "julio",
+      "valorTotal": "18000",
+      "precioUnitario": "9000",
+      "referenciaProducto": "HF34",
+      "cantidad": "2",
+      "identificacion": "1007036219",
+      "nombre": "Amira",
+      "id": 5
+=======
+>>>>>>> origin/development
     }
   ]
 }

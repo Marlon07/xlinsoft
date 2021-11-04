@@ -18,7 +18,6 @@ const MaestroProductos = () => {
         <div className="content">
           <h1>Registro de Productos</h1>
           <CrudTable />
-          
           <p></p>
         </div>
       </div>
