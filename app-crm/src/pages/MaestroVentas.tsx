@@ -23,8 +23,11 @@ const MaestroVentas = () => {
           <h1>Registro de Ventas</h1>
           {/* <Search />  */}
           <CrudTable />
+<<<<<<< HEAD
           {/* <Search /> */}
           {/* <Barra /> */}
+=======
+>>>>>>> origin/development
           <p></p>
         </div>
       </div>

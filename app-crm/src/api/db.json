@@ -94,6 +94,7 @@
       "identificacion": "1007036219",
       "nombre": "Amira",
       "id": 3
+<<<<<<< HEAD
     },
     {
       "vendedor": "julio",
@@ -114,6 +115,8 @@
       "identificacion": "1007036219",
       "nombre": "Amira",
       "id": 5
+=======
+>>>>>>> origin/development
     }
   ]
 }
