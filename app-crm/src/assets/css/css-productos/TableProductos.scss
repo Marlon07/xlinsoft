@@ -111,10 +111,11 @@
 
 // MODAL
 .modal{
-  position: absolute;
+  // position: absolute;
   width: 100vw;
-  height: 60vmax;
+  height: 100vh;
   background: rgba(70, 69, 69, 0.275);
+  position: fixed;
 }
 
 .modal-content{
@@ -122,20 +123,26 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  top: 100px;
-  left: 35vw;
-  width: 500px;
-  height: 250px;
-  padding: 20px 40px 20px 120px;
+  text-align: center;
+  top: 33%;
+  left: 35%;
+  width: 30%;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  // padding: 20px 40px 20px 120px;
   border-radius: 10px;
   border-top: 6px solid #ff0052;
   background:$white;
 }
 
 .btn-trash{
-  position: absolute;
-  top: 40px;
-  left: 30px;
+  // position: absolute;
+  // top: 40px;
+  // left: 30px;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 66px;
   padding: 10px 13px;
   border-radius: 50%;
   color: $white;
@@ -146,10 +153,12 @@
   font-family: $fuente-titulo;
   font-size: 1.3em;
   color: #464545;
+  margin-bottom: 30px;
 }
 
 .modal-body{
   font-family: $fuente-pricipal;
+  margin-bottom: 30px;
   line-height: 30px;
   color: #464545;
 }
@@ -170,7 +179,7 @@
 .btn-si{
   font-family: $fuente-secundaria;
   font-size: 1em;
-  width: 80px;
+  width: 100px;
   height: 40px;
   border-radius: 7px;
   color: $white;
