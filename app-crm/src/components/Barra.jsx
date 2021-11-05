@@ -113,9 +113,7 @@ class Barra extends Component {
           <NavLink
             to="/ventas"
             activeClassName="active"
-            // onClick={() => {
-            //   this.setState({ form: null, tipoModal: "insertar" });
-            // }}
+
           >
             <span className="btn-registrar">Registrar Nuevo</span>
           </NavLink>
