@@ -7,9 +7,6 @@ import { NavLink } from "react-router-dom";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 
 const url = Global.ventasURL;
-// const [ventas, setUsuarios]= useState([]);
-// const [tablaVentas, setTablaUsuarios]= useState([]);
-// const [busqueda, setBusqueda]= useState("");
 
 class TableVentas extends Component {
   state = {
@@ -77,10 +74,10 @@ class TableVentas extends Component {
     var resultadosBusqueda=this.state.tablaVentas.filter((elemento)=>{
       if (terminoBusqueda === "") {
         return elemento;
-      }else if(elemento.id.toString().toLowerCase().includes(terminoBusqueda.toLowerCase()) 
+      }else if(elemento.id.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       || elemento.vendedor.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-      || elemento.referenciaProducto.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-      || elemento.identificacion.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      || elemento.referenciaProducto.toString().toLowerCase().includes(terminoBusqueda.toLowerCase().length > 5)
+      || elemento.identificacion.toString().toLowerCase().includes(terminoBusqueda.toLowerCase().length > 5)
       || elemento.nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       ){
         return elemento;
@@ -89,10 +86,6 @@ class TableVentas extends Component {
     });
     this.setState({ ventas: resultadosBusqueda });
   }
-
-  // useEffect(()=>{ 
-  //   peticionGet();
-  //   },[])
 
   componentDidMount() {
     this.cargarVentas();
@@ -119,16 +112,11 @@ class TableVentas extends Component {
           <NavLink
             to="/ventas"
             activeClassName="active"
-            // onClick={() => {
-            //   this.setState({ form: null, tipoModal: "insertar" });
-            // }}
           >
             <span className="btn-registrar">Registrar Nuevo</span>
           </NavLink>
         </div>
-
         
-
         <div className="table-responsive">
           <table className="tab">
             <thead>
@@ -142,10 +130,8 @@ class TableVentas extends Component {
                   <th>Identificacion</th>
                   <th>Nombre</th>
                   <th>Acciones</th>
-
               </tr>
             </thead>
-
             <tbody>
               {this.state.ventas && 
               this.state.ventas.map((venta)=>(
@@ -195,8 +181,6 @@ class TableVentas extends Component {
                         <Icon.Trash2 size={20} />
                       </button>
                     </td>
-
-
                 </tr>
               ))}
             </tbody>
