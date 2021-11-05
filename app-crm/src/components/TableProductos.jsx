@@ -115,9 +115,6 @@ class TableProductos extends Component {
           <NavLink
             to="/productos"
             activeClassName="active"
-            // onClick={() => {
-            //   this.setState({ form: null, tipoModal: "insertar" });
-            // }}
           >
             <span className="btn-registrar">Registrar Nuevo</span>
           </NavLink>
@@ -199,8 +196,10 @@ class TableProductos extends Component {
         </Modal>
 
         <Modal className="modal" isOpen={this.state.modalEditar}>
+          <div className="modal-content-editar">
           <ModalHeader>Editar Producto</ModalHeader>
-          <ModalBody>
+
+          <ModalBody className="modalEditar">
           <label className="label" htmlFor="nombre">
               Nombre
             </label>
@@ -267,12 +266,13 @@ class TableProductos extends Component {
               Cancelar
             </button>
             <button
-              className="btn-si"
+              className="btn-actualizar"
               onClick={()=>this.peticionPut()}
             >
               Actualizar
             </button>
           </ModalFooter>
+          </div>
         </Modal>
       </div>
     );

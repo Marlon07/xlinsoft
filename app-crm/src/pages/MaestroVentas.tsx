@@ -10,7 +10,6 @@ const MaestroVentas = () => {
   return (
     <div>
       <Menu />
-      {/* se desactiva el menu de la izquierda*/}
       {/* main */}
       <div className="main">
         <div className="topbar">
@@ -21,11 +20,13 @@ const MaestroVentas = () => {
         {/* Contenido */}
         <div className="content">
           <h1>Registro de Ventas</h1>
-          {/* <Search />  */}
           <CrudTable />
+<<<<<<< HEAD
           {/* <Search /> */}
           {/* <Barra /> */}
           <p></p>
+=======
+>>>>>>> f7b40eb125c302aa284543c3208272b9d06996e2
         </div>
       </div>
     </div>

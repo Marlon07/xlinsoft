@@ -80,10 +80,6 @@ class FormProductos extends Component {
     });
   };
 
-  // componentDidMount() {
-  //   this.peticionPost();
-  // }
-
   render() {
     const { form } = this.state;
     return (
@@ -151,12 +147,9 @@ class FormProductos extends Component {
               className="btn-guardar"
               type="submit"
               onClick={() => this.peticionPost()}
+              disabled={true}
             >
               Guardar
-            </button>
-
-            <button type="reset">
-              Cancelar
             </button>
           </form>
           <img
