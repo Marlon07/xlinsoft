@@ -2,9 +2,6 @@
 import GoogleLogin from 'react-google-login';
 import logo from '../assets/images/logo.svg';
 import ilustracion from '../assets/images/cuate.svg';
-import { Redirect } from 'react-router';
-import { url } from 'inspector';
-// import { url } from 'inspector';
 
 const Login = () => {
 

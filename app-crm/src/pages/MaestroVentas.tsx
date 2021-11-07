@@ -21,12 +21,7 @@ const MaestroVentas = () => {
         <div className="content">
           <h1>Registro de Ventas</h1>
           <CrudTable />
-<<<<<<< HEAD
-          {/* <Search /> */}
-          {/* <Barra /> */}
           <p></p>
-=======
->>>>>>> f7b40eb125c302aa284543c3208272b9d06996e2
         </div>
       </div>
     </div>

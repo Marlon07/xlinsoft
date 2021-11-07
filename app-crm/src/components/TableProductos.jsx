@@ -12,6 +12,8 @@ const url = Global.baseURL;
 class TableProductos extends Component {
   state = {
     data: [],
+    productos: [],
+    busqueda: "",
     modalEliminar: false,
     modalEditar: false,
     form: {
@@ -26,8 +28,17 @@ class TableProductos extends Component {
 
   modalDeleteSuccess = () => {
     Swal.fire({
-      // text: "Producto eliminado satisfactoriamente",
       html: "Producto eliminado satisfactoriamente",
+      timer: 2000,
+      timerProgressBar: true,
+      icon: "success",
+      confirmButtonColor: "#173e63",
+    });
+  };
+
+  modalUpdateSuccess = () => {
+    Swal.fire({
+      html: "Producto actualizado satisfactoriamente",
       timer: 2000,
       timerProgressBar: true,
       icon: "success",
@@ -39,8 +50,8 @@ class TableProductos extends Component {
     axios
       .get(url)
       .then((response) => {
-        // console.log(res.data);
         this.setState({ data: response.data });
+        this.setState({ productos: response.data });
       })
       .catch((error) => {
         console.log(error.message);
@@ -85,11 +96,9 @@ class TableProductos extends Component {
     });
   };
 
-  modalEditar=()=>{
-    this.setState({modalEditar: !this.state.modalEditar});
-  }
-
   handleChange = async (e) => {
+    this.setState({ busqueda: e.target.value });
+    this.filtrar(e.target.value);
     e.persist();
     await this.setState({
       form: {
@@ -97,6 +106,39 @@ class TableProductos extends Component {
         [e.target.name]: e.target.value,
       },
     });
+  };
+
+  filtrar = (terminoBusqueda) => {
+    var resultadosBusqueda = this.state.data.filter((elemento) => {
+      if (terminoBusqueda === "") {
+        return elemento;
+      } else if (
+        elemento.id
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase()) ||
+        elemento.nombre
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase()) ||
+        elemento.valorUnitario
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase().length > 3) ||
+        elemento.estado
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase())
+      ) {
+        return elemento;
+      }
+      return false;
+    });
+    this.setState({ productos: resultadosBusqueda });
+  };
+
+  modalEditar = () => {
+    this.setState({ modalEditar: !this.state.modalEditar });
   };
 
   componentDidMount() {
@@ -111,11 +153,14 @@ class TableProductos extends Component {
           <span className="ico-buscar">
             <Icon.Search size={20} />
           </span>
-          <input className="inp-buscar" type="search" placeholder="Buscar" />
-          <NavLink
-            to="/productos"
-            activeClassName="active"
-          >
+          <input
+            className="inp-buscar"
+            type="search"
+            placeholder="Buscar por id, nombre, valor unitario o estado"
+            value={this.state.busqueda}
+            onChange={this.handleChange}
+          />
+          <NavLink to="/productos" activeClassName="active">
             <span className="btn-registrar">Registrar Nuevo</span>
           </NavLink>
         </div>
@@ -132,39 +177,43 @@ class TableProductos extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.data.map((producto, i) => {
-              return (
-                <tr key={i}>
-                  <td>{producto.id}</td>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.descripcion}</td>
-                  <td>
-                    &#36;{" "}
-                    {new Intl.NumberFormat("es-ES").format(
-                      producto.valorUnitario
-                    )}
-                  </td>
-                  <td>{producto.estado}</td>
-                  <td>
-                    <button
-                      className="btn-editar"
-                      onClick={()=>{this.seleccionarProducto(producto); this.modalEditar()}}
-                    >
-                      <Icon.Edit2 size={20} />
-                    </button>
-                    <button
-                      className="btn-eliminar"
-                      onClick={() => {
-                        this.seleccionarProducto(producto);
-                        this.setState({ modalEliminar: true });
-                      }}
-                    >
-                      <Icon.Trash2 size={20} />
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+            {this.state.productos &&
+              this.state.productos.map((producto, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{producto.id}</td>
+                    <td>{producto.nombre}</td>
+                    <td>{producto.descripcion}</td>
+                    <td>
+                      &#36;{" "}
+                      {new Intl.NumberFormat("es-ES").format(
+                        producto.valorUnitario
+                      )}
+                    </td>
+                    <td>{producto.estado}</td>
+                    <td>
+                      <button
+                        className="btn-editar"
+                        onClick={() => {
+                          this.seleccionarProducto(producto);
+                          this.modalEditar();
+                        }}
+                      >
+                        <Icon.Edit2 size={20} />
+                      </button>
+                      <button
+                        className="btn-eliminar"
+                        onClick={() => {
+                          this.seleccionarProducto(producto);
+                          this.setState({ modalEliminar: true });
+                        }}
+                      >
+                        <Icon.Trash2 size={20} />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
 
@@ -197,81 +246,80 @@ class TableProductos extends Component {
 
         <Modal className="modal" isOpen={this.state.modalEditar}>
           <div className="modal-content-editar">
-          <ModalHeader>Editar Producto</ModalHeader>
+            <ModalHeader>Editar Producto</ModalHeader>
 
-          <ModalBody className="modalEditar">
-          <label className="label" htmlFor="nombre">
-              Nombre
-            </label>
-            <input
-              className="input"
-              type="text"
-              name="nombre"
-              id="nombre"
-              onChange={this.handleChange}
-              value={form ? form.nombre : ""}
-              required
-            />
-
-            <label className="label" htmlFor="descripcion">
-              Descripción
-            </label>
-            <textarea
-              className="textarea"
-              type="text"
-              name="descripcion"
-              id="descripcion"
-              onChange={this.handleChange}
-              value={form ? form.descripcion : ""}
-              required
-            />
-
-            <label className="label" htmlFor="valorUnitario">
-              Valor Unitario
-            </label>
-            <input
-              className="input"
-              type="text"
-              name="valorUnitario"
-              id="valorUnitario"
-              placeholder="$"
-              onChange={this.handleChange}
-              value={form ? form.valorUnitario : ""}
-              required
-            />
-
-            <label className="label" htmlFor="estado">
-              Estado
-            </label>
-            <div className="caja">
-              <select
-                className="select"
-                id="estado"
-                name="estado"
+            <ModalBody className="modalEditar">
+              <label className="label" htmlFor="nombre">
+                Nombre
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="nombre"
+                id="nombre"
                 onChange={this.handleChange}
-                value={form.estado}
-                required
+                value={form ? form.nombre : ""}
+              />
+
+              <label className="label" htmlFor="descripcion">
+                Descripción
+              </label>
+              <textarea
+                className="textarea"
+                type="text"
+                name="descripcion"
+                id="descripcion"
+                onChange={this.handleChange}
+                value={form ? form.descripcion : ""}
+              />
+
+              <label className="label" htmlFor="valorUnitario">
+                Valor Unitario
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="valorUnitario"
+                id="valorUnitario"
+                placeholder="$"
+                onChange={this.handleChange}
+                value={form ? form.valorUnitario : ""}
+              />
+
+              <label className="label" htmlFor="estado">
+                Estado
+              </label>
+              <div className="caja">
+                <select
+                  className="select"
+                  id="estado"
+                  name="estado"
+                  onChange={this.handleChange}
+                  value={form.estado}
+                >
+                  <option>Seleccionar ...</option>nombre
+                  <option value="Disponible">Disponible</option>
+                  <option value="No disponible">No disponible</option>
+                </select>
+              </div>
+            </ModalBody>
+            <ModalFooter>
+              <button
+                className="btn-no"
+                onClick={() => this.setState({ modalEditar: false })}
               >
-                <option>Seleccionar ...</option>nombre
-                <option value="Disponible">Disponible</option>
-                <option value="No disponible">No disponible</option>
-              </select>
-            </div>
-          </ModalBody>
-          <ModalFooter>
-            <button
-              className="btn-no"
-              onClick={() => this.setState({ modalEditar: false })}
-            >
-              Cancelar
-            </button>
-            <button
-              className="btn-actualizar"
-              onClick={()=>this.peticionPut()}
-            >
-              Actualizar
-            </button>
-          </ModalFooter>
+                Cancelar
+              </button>
+              <button
+                className="btn-actualizar"
+                onClick={() => {
+                  this.peticionPut();
+                  this.modalUpdateSuccess();
+                }}
+              >
+                Actualizar
+              </button>
+            </ModalFooter>
           </div>
         </Modal>
       </div>
