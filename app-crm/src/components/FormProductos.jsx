@@ -3,15 +3,9 @@ import axios from "axios";
 import Global from "../Global";
 import "../assets/css/css-productos/FormProductos.scss";
 import ilustracion from "../assets/images/productos.svg";
+import Swal from "sweetalert2";
 
 const url = Global.baseURL;
-
-const initialForm = {
-  nombre: "",
-  descripcion: "",
-  valorUnitario: "",
-  estado: "",
-};
 
 class FormProductos extends Component {
   state = {
@@ -30,7 +24,7 @@ class FormProductos extends Component {
     axios
       .get(url)
       .then((response) => {
-        // console.log(res.data);
+
         this.setState({ data: response.data });
       })
       .catch((error) => {
@@ -50,6 +44,25 @@ class FormProductos extends Component {
         console.log(error.message);
       });
   };
+
+  modalError = () => {
+    Swal.fire({
+      html: "Debe diligenciar todos los campos",
+      // timer: 7000,
+      // timerProgressBar: true,
+      icon: "warning",
+      confirmButtonColor: "#173e63",
+    });
+  };
+
+  handleOnclick = () => {
+    const isValid = this.state.form?.nombre !== '' && this.state.form?.descripcion !== '' && this.state.form?.valorUnitario !== '' ;
+    if (isValid) {
+      this.peticionPost();
+    } else {
+      this.modalError();
+    }
+  }
 
   peticionPut = () => {
     axios.put(url + this.state.form.id, this.state.form).then((response) => {
@@ -80,10 +93,6 @@ class FormProductos extends Component {
     });
   };
 
-  // componentDidMount() {
-  //   this.peticionPost();
-  // }
-
   render() {
     const { form } = this.state;
     return (
@@ -100,7 +109,6 @@ class FormProductos extends Component {
               id="nombre"
               onChange={this.handleChange}
               value={form ? form.nombre : ""}
-              required
             />
 
             <label className="label" htmlFor="descripcion">
@@ -113,7 +121,6 @@ class FormProductos extends Component {
               id="descripcion"
               onChange={this.handleChange}
               value={form ? form.descripcion : ""}
-              required
             />
 
             <label className="label" htmlFor="valorUnitario">
@@ -127,7 +134,6 @@ class FormProductos extends Component {
               placeholder="$"
               onChange={this.handleChange}
               value={form ? form.valorUnitario : ""}
-              required
             />
 
             <label className="label" htmlFor="estado">
@@ -140,9 +146,8 @@ class FormProductos extends Component {
                 name="estado"
                 onChange={this.handleChange}
                 value={form.estado}
-                required
               >
-                <option>Seleccionar ...</option>nombre
+                <option>Seleccionar ...</option>
                 <option value="Disponible">Disponible</option>
                 <option value="No disponible">No disponible</option>
               </select>
@@ -150,13 +155,9 @@ class FormProductos extends Component {
             <button
               className="btn-guardar"
               type="submit"
-              onClick={() => this.peticionPost()}
+              onClick={this.handleOnclick}
             >
               Guardar
-            </button>
-
-            <button type="reset">
-              Cancelar
             </button>
           </form>
           <img
