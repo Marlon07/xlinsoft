@@ -36,12 +36,11 @@
       "estado": "Disponible"
     },
     {
-      "nombre": "Teclado DURGOD",
-      "descripcion": "Teclado TKL retroiluminado color blanco",
-      "valorUnitario": "465000",
-      "estado": "No disponible",
-      "tipoModal": "",
-      "id": 6
+      "id": 11,
+      "nombre": "Diadema Corsair Virtuoso SE",
+      "descripcion": "Diadema Corsair Virtuoso wireless, sonido 7.1, Hi-Res",
+      "valorUnitario": "965000",
+      "estado": "Disponible"
     }
   ],
   "usuarios": [
@@ -66,24 +65,24 @@
   ],
   "ventas": [
     {
+      "id": 1,
       "vendedor": "Juan Francisco Quintero",
       "valorTotal": "5000",
       "precioUnitario": "1000",
       "referenciaProducto": "ULN234",
       "cantidad": "5",
       "identificacion": "1094259425",
-      "nombre": "Nickollas",
-      "id": 1
+      "nombre": "Nickollas"
     },
     {
-      "vendedor": "Pacho Quintero",
+      "id": 2,
+      "vendedor": "Pacho Quinteros",
       "valorTotal": "2000",
       "precioUnitario": "500",
       "referenciaProducto": "UL23",
       "cantidad": "4",
       "identificacion": "1094239435",
-      "nombre": "Brayan",
-      "id": 2
+      "nombre": "Brayan"
     },
     {
       "vendedor": "pardo",
@@ -94,17 +93,16 @@
       "identificacion": "1007036219",
       "nombre": "Amira",
       "id": 3
-<<<<<<< HEAD
     },
     {
+      "id": 4,
       "vendedor": "julio",
       "valorTotal": "4500",
       "precioUnitario": "1500",
       "referenciaProducto": "HTF34",
       "cantidad": "3",
-      "identificacion": "123456789",
-      "nombre": "Linis",
-      "id": 4
+      "identificacion": "1234567891",
+      "nombre": "Linis"
     },
     {
       "vendedor": "julio",
@@ -115,8 +113,6 @@
       "identificacion": "1007036219",
       "nombre": "Amira",
       "id": 5
-=======
->>>>>>> origin/development
     }
   ]
 }
