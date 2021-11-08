@@ -1,21 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import * as Icon from 'react-feather'
 import '../assets/css/Menu.scss';
 import LogoMenu from '../assets/images/logo-menu.svg';
-// import Inicio from '../pages/Inicio';
-// import Usuarios from '../pages/Usuarios';
 
 const Menu = () => {
-
-    let list = document.querySelectorAll('.navegacion li');
-    function activeLink(this: any) {
-        list.forEach((item) =>
-            item.classList.remove('active'));
-        this.classList.add('active');
-    }
-    list.forEach((item) =>
-        item.addEventListener('click', activeLink));
 
     return (
         <div className="container">
@@ -27,29 +16,41 @@ const Menu = () => {
                             <span className="title">Xlinsoft</span>
                         </Link>
                     </li>
-                    <li className="active">
-                        <Link to="/inicio">
+                    <li>
+                        <NavLink to="/inicio" activeClassName="active">
                             <span className="icon"><Icon.Home /></span>
                             <span className="title">Inicio</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/productos">
+                        <NavLink to="/productos" activeClassName="active">
+                            <span className="icon"><Icon.Box /></span>
+                            <span className="title">Registrar Producto</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/ventas" activeClassName="active">
+                            <span className="icon"><Icon.ShoppingCart /></span>
+                            <span className="title">Registrar Venta</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/maestro-productos" activeClassName="active">
                             <span className="icon"><Icon.Package /></span>
-                            <span className="title">Productos</span>
-                        </Link>
+                            <span className="title">Registro de Productos</span>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/ventas">
+                        <NavLink to="/maestro-ventas" activeClassName="active">
                             <span className="icon"><Icon.ShoppingBag /></span>
-                            <span className="title">Ventas</span>
-                        </Link>
+                            <span className="title">Registro de Ventas</span>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/usuarios">
+                        <NavLink to="/usuarios" activeClassName="active">
                             <span className="icon"><Icon.User /></span>
                             <span className="title">Usuarios</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
                         <Link to="/">

@@ -1,6 +1,7 @@
 import React from 'react'
 import Menu from '../components/Menu'
 import * as Icon from 'react-feather'
+import FormProductos from '../components/FormProductos'
 
 const Productos = () => {
     return (
@@ -16,6 +17,7 @@ const Productos = () => {
                 {/* Contenido */}
                 <div className="content">
                     <h1>Registrar Producto</h1>
+                    <FormProductos/>
                 </div>
             </div>
         </div>

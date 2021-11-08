@@ -1,0 +1,51 @@
+@import '../base';
+
+.input-id{
+    background: #d6d6d6 !important;
+}
+
+.input-id:focus{
+    outline: none;
+}
+
+.textarea{
+    width: 450px !important;
+    height: 100px !important;
+    font-family: $fuente-pricipal;
+    font-size: 1em !important;
+    resize: none;
+    border-radius: 15px;
+    border: none;
+    background: #F0F0F0;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.caja{
+    background: #F0F0F0;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.select{
+    display: block;
+    width: 285px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 70px !important;
+    font-size: 1em;
+    background: transparent;
+    border: none;
+}
+
+.select:focus{
+    outline: none;
+}
+
+.img-productos{
+    width: 600px;
+    height: 536.72px;
+    margin-right: 100px;
+}
+
