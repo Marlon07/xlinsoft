@@ -55,12 +55,6 @@
       "estado": "Autorizado",
       "perfil": "Administrador",
       "id": 2
-    },
-    {
-      "nombre": "Adriana Marcela Díaz",
-      "estado": "Pendiente",
-      "perfil": "Vendedor",
-      "id": 3
     }
   ],
   "ventas": [

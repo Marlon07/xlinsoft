@@ -10,14 +10,16 @@ const url = Global.userURL;
 class TableUsuarios extends Component {
   state = {
     data: [],
+    usuarios: [],
+    busqueda: "",
   };
 
   cargarUsuarios = () => {
     axios
       .get(url)
       .then((response) => {
-        // console.log(res.data);
         this.setState({ data: response.data });
+        this.setState({ usuarios: response.data });
       })
       .catch((error) => {
         console.log(error.message);
@@ -61,6 +63,8 @@ class TableUsuarios extends Component {
   };
 
   handleChange = async (e) => {
+    this.setState({ busqueda: e.target.value });
+    this.filtrar(e.target.value);
     e.persist();
     await this.setState({
       form: {
@@ -68,6 +72,35 @@ class TableUsuarios extends Component {
         [e.target.name]: e.target.value,
       },
     });
+  };
+
+  filtrar = (terminoBusqueda) => {
+    var resultadosBusqueda = this.state.data.filter((elemento) => {
+      if (terminoBusqueda === "") {
+        return elemento;
+      } else if (
+        elemento.id
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase()) ||
+        elemento.nombre
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase()) ||
+        elemento.estado
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase()) ||
+        elemento.perfil
+          .toString()
+          .toLowerCase()
+          .includes(terminoBusqueda.toLowerCase())
+      ) {
+        return elemento;
+      }
+      return false;
+    });
+    this.setState({ usuarios: resultadosBusqueda });
   };
 
   componentDidMount() {
@@ -78,12 +111,17 @@ class TableUsuarios extends Component {
     const { form } = this.state;
     return (
       <div>
-
         <div>
           <span className="ico-buscar">
             <Icon.Search size={20} />
           </span>
-          <input className="inp-buscar" type="search" placeholder="Buscar" />
+          <input
+            className="inp-buscar"
+            type="search"
+            placeholder="Buscar por id, nombre, estado o perfil"
+            value={this.state.busqueda}
+            onChange={this.handleChange}
+          />
         </div>
 
         <table className="table">
@@ -97,33 +135,34 @@ class TableUsuarios extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.data.map((usuario, i) => {
-              return (
-                <tr key={i}>
-                  <td className="td2">{usuario.id}</td>
-                  <td className="td2">{usuario.nombre}</td>
-                  <td className="td2">{usuario.estado}</td>
-                  <td className="td2">{usuario.perfil}</td>
-                  <td className="td2">
-                    <button
-                      className="btn-editar"
-                      onClick={() => this.seleccionarUsuario(usuario)}
-                    >
-                      <Icon.Edit2 size={20} />
-                    </button>
-                    <button
-                      className="btn-eliminar"
-                      onClick={() => {
-                        this.seleccionarUsuario(usuario);
-                        this.setState({ modalEliminar: true });
-                      }}
-                    >
-                      <Icon.Trash2 size={20} />
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+            {this.state.usuarios &&
+              this.state.usuarios.map((usuario, i) => {
+                return (
+                  <tr key={i}>
+                    <td className="td2">{usuario.id}</td>
+                    <td className="td2">{usuario.nombre}</td>
+                    <td className="td2">{usuario.estado}</td>
+                    <td className="td2">{usuario.perfil}</td>
+                    <td className="td2">
+                      <button
+                        className="btn-editar"
+                        onClick={() => this.seleccionarUsuario(usuario)}
+                      >
+                        <Icon.Edit2 size={20} />
+                      </button>
+                      <button
+                        className="btn-eliminar"
+                        onClick={() => {
+                          this.seleccionarUsuario(usuario);
+                          this.setState({ modalEliminar: true });
+                        }}
+                      >
+                        <Icon.Trash2 size={20} />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
 
@@ -147,7 +186,6 @@ class TableUsuarios extends Component {
             </button>
           </ModalFooter>
         </Modal>
-        
       </div>
     );
   }

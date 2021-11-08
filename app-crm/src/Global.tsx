@@ -1,5 +1,5 @@
 var Global = {
-    baseURL: "http://localhost:5000/productos",
+    baseURL: "http://localhost:8080/api/products",
     userURL: "http://localhost:5000/usuarios",
     ventasURL: "http://localhost:5000/ventas"
 }

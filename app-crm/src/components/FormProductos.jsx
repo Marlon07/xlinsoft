@@ -10,13 +10,14 @@ const url = Global.baseURL;
 class FormProductos extends Component {
   state = {
     data: [],
+    modalEliminar: false,
     form: {
       id: "",
       nombre: "",
       descripcion: "",
       valorUnitario: "",
       estado: "",
-      tipoModal: "",
+      // tipoModal: "",
     },
   };
 
@@ -24,7 +25,6 @@ class FormProductos extends Component {
     axios
       .get(url)
       .then((response) => {
-
         this.setState({ data: response.data });
       })
       .catch((error) => {
@@ -36,7 +36,7 @@ class FormProductos extends Component {
   peticionPost = async () => {
     delete this.state.form.id;
     await axios
-      .post(url, this.state.form)
+      .post("http://localhost:8080/api/products/add", this.state.form)
       .then((response) => {
         this.cargarProductos();
       })
@@ -45,25 +45,42 @@ class FormProductos extends Component {
       });
   };
 
+  modalSuccess = () => {
+    Swal.fire({
+      html: "Producto guardado satisfactoriamente",
+      timer: 2000,
+      timerProgressBar: true,
+      icon: "success",
+      confirmButtonColor: "#173e63",
+    });
+  };
+
   modalError = () => {
     Swal.fire({
       html: "Debe diligenciar todos los campos",
-      // timer: 7000,
-      // timerProgressBar: true,
+      timer: 3000,
+      timerProgressBar: true,
       icon: "warning",
       confirmButtonColor: "#173e63",
     });
   };
 
   handleOnclick = () => {
-    const isValid = this.state.form?.nombre !== '' && this.state.form?.descripcion !== '' && this.state.form?.valorUnitario !== '' ;
+    const isValid =
+      this.state.form?.nombre !== "" &&
+      this.state.form?.descripcion !== "" &&
+      this.state.form?.valorUnitario !== "";
     if (isValid) {
       this.peticionPost();
+      this.modalSuccess();
     } else {
+      // this.setState({ modalEliminar: true });
       this.modalError();
+      // alert('Hola');
     }
-  }
+  };
 
+  // UPDATE
   peticionPut = () => {
     axios.put(url + this.state.form.id, this.state.form).then((response) => {
       this.cargarProductos();
@@ -94,7 +111,7 @@ class FormProductos extends Component {
   };
 
   render() {
-    const { form } = this.state;
+    // const { form } = this.state;
     return (
       <div>
         <div className="contenedor">
@@ -108,7 +125,7 @@ class FormProductos extends Component {
               name="nombre"
               id="nombre"
               onChange={this.handleChange}
-              value={form ? form.nombre : ""}
+              // value={form ? form.nombre : ""}
             />
 
             <label className="label" htmlFor="descripcion">
@@ -120,7 +137,7 @@ class FormProductos extends Component {
               name="descripcion"
               id="descripcion"
               onChange={this.handleChange}
-              value={form ? form.descripcion : ""}
+              // value={form ? form.descripcion : ""}
             />
 
             <label className="label" htmlFor="valorUnitario">
@@ -133,7 +150,7 @@ class FormProductos extends Component {
               id="valorUnitario"
               placeholder="$"
               onChange={this.handleChange}
-              value={form ? form.valorUnitario : ""}
+              // value={form ? form.valorUnitario : ""}
             />
 
             <label className="label" htmlFor="estado">
@@ -145,7 +162,7 @@ class FormProductos extends Component {
                 id="estado"
                 name="estado"
                 onChange={this.handleChange}
-                value={form.estado}
+                // value={form ? form.estado : ""}
               >
                 <option>Seleccionar ...</option>
                 <option value="Disponible">Disponible</option>
@@ -154,10 +171,16 @@ class FormProductos extends Component {
             </div>
             <button
               className="btn-guardar"
-              type="submit"
-              onClick={this.handleOnclick}
+              type="button"
+              onClick={() => this.handleOnclick()}
             >
               Guardar
+            </button>
+            <button
+              className="btn-cancelar"
+              type="reset"
+            >
+              Cancelar
             </button>
           </form>
           <img

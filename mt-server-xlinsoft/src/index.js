@@ -24,7 +24,7 @@ app.use(cors({
 
 // Routes
 app.get('/', (req, resp) => {
-  resp.json('Wellcome!');
+  resp.json('Welcome!');
 });
 app.use('/api', Routes);
 

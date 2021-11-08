@@ -97,8 +97,8 @@ class TableProductos extends Component {
   };
 
   handleChange = async (e) => {
-    this.setState({ busqueda: e.target.value });
-    this.filtrar(e.target.value);
+    // this.setState({ busqueda: e.target.value });
+    // this.filtrar(e.target.value);
     e.persist();
     await this.setState({
       form: {
@@ -181,7 +181,7 @@ class TableProductos extends Component {
               this.state.productos.map((producto, i) => {
                 return (
                   <tr key={i}>
-                    <td>{producto.id}</td>
+                    <td>{producto.id_p}</td>
                     <td>{producto.nombre}</td>
                     <td>{producto.descripcion}</td>
                     <td>
