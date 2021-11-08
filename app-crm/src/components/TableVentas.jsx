@@ -8,14 +8,29 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import Swal from "sweetalert2";
 
 const url = Global.ventasURL;
+<<<<<<< HEAD
+// const [ventas, setUsuarios]= useState([]);
+// const [tablaVentas, setTablaUsuarios]= useState([]);
+// const [busqueda, setBusqueda]= useState("");
+=======
+>>>>>>> origin/development
 
 class TableVentas extends Component {
   state = {
     tablaVentas: [],
+<<<<<<< HEAD
+    ventas: [], 
+    busqueda: "",
+    modalEliminar: false,
+    modalEditar: false,
+    form: {
+     
+=======
     ventas: [],
     busqueda: "",
     modalEliminar: false,
     form: {
+>>>>>>> origin/development
       vendedor: "",
       valorTotal: "",
       precioUnitario: "",
@@ -29,7 +44,11 @@ class TableVentas extends Component {
 
   modalDeleteSuccess = () => {
     Swal.fire({
+<<<<<<< HEAD
+      html: "Producto eliminado satisfactoriamente",
+=======
       html: "Venta eliminada satisfactoriamente",
+>>>>>>> origin/development
       timer: 2000,
       timerProgressBar: true,
       icon: "success",
@@ -37,6 +56,39 @@ class TableVentas extends Component {
     });
   };
 
+<<<<<<< HEAD
+  modalUpdateSuccess = () => {
+    Swal.fire({
+      html: "Producto actualizado satisfactoriamente",
+      timer: 2000,
+      timerProgressBar: true,
+      icon: "success",
+      confirmButtonColor: "#173e63",
+    });
+  };
+
+  cargarVentas=()=>{
+    axios
+      .get(url)
+      .then(response=>{
+        this.setState({ tablaVentas: response.data });
+        this.setState({ ventas: response.data });
+      }).catch(error=>{
+        console.log(error);
+      })
+  }
+
+  // ACTUALIZAR
+  peticionPut = () => {
+    axios
+      .put(url + "/" + this.state.form.id, this.state.form)
+      .then((response) => {
+        this.setState({ modalEditar: false });
+        this.cargarVentas();
+      })
+      .catch((error) => {
+        console.log(error.message);
+=======
   cargarVentas = async () => {
     await axios
       .get(url)
@@ -46,6 +98,7 @@ class TableVentas extends Component {
       })
       .catch((error) => {
         console.log(error);
+>>>>>>> origin/development
       });
   };
 
@@ -77,6 +130,54 @@ class TableVentas extends Component {
     });
   };
 
+<<<<<<< HEAD
+  handleChange = async (e) => {
+    this.setState({ busqueda: e.target.value });
+    this.filtrar(e.target.value);
+    e.persist();
+    await this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+  // filtrar=(terminoBusqueda)=>{
+  //   var resultadosBusqueda=this.state.tablaVentas.filter((elemento)=>{
+  //     if (terminoBusqueda === "") {
+  //       return elemento;
+  //     }else if( elemento.vendedor.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+  //     || elemento.referenciaProducto.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+  //     || elemento.identificacion.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+  //     || elemento.nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+  //     ){
+  //       return elemento;
+  //     }
+  //     return false;
+  //   });
+  //   this.setState({ ventas: resultadosBusqueda });
+  // }
+  filtrar=(terminoBusqueda)=>{
+    var resultadosBusqueda=this.state.tablaVentas.filter((elemento)=>{
+      //this.isAlphaNumeric(terminoBusqueda)
+      if (terminoBusqueda === "") {
+        return elemento; 
+      }
+      else if(this.isAlphaNumeric(terminoBusqueda) === true){
+        if(elemento.referenciaProducto.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
+          return elemento;
+        }
+      }else if((elemento.id.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())))
+      {
+        return elemento;
+      }else if(terminoBusqueda.length === 10){
+        if(elemento.identificacion.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())){
+          return elemento;
+        }
+      }else if(elemento.vendedor.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+            || elemento.nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
+      ){
+=======
   handleChange = (e) => {
     this.setState({ busqueda: e.target.value });
     this.filtrar(e.target.value);
@@ -108,13 +209,54 @@ class TableVentas extends Component {
           .toLowerCase()
           .includes(terminoBusqueda.toLowerCase())
       ) {
+>>>>>>> origin/development
         return elemento;
       }
       return false;
     });
     this.setState({ ventas: resultadosBusqueda });
+<<<<<<< HEAD
+  }
+
+  isAlphaNumeric(str) {
+    var code, i, len, num, le;
+  
+    for (i = 0, len = str.length, num=0, le=0; i < len; i++) {
+      code = str.charCodeAt(i);
+      if ((code > 47 && code < 58) //&& // numeric (0-9)
+          //!(code > 64 && code < 91) && // upper alpha (A-Z)
+          //!(code > 96 && code < 123)
+          ) { // lower alpha (a-z)
+            num = num + 1;  
+      }
+      if((code > 64 && code < 91) || // upper alpha (A-Z)
+      (code > 96 && code < 123)){
+        le = le + 1;
+      }
+    }
+    //alert("termino " + "Numero " + num + " Letras " + le)
+    
+    //alert(num.toString());
+    if(num>0 && le >0){
+      //alert('Input is alphanumeric');
+      return true;
+    }else{
+      return false;
+    } 
   };
 
+  modalEditar = () => {
+    this.setState({ modalEditar: !this.state.modalEditar });
+  };
+
+  // useEffect(()=>{ 
+  //   peticionGet();
+  //   },[])
+
+=======
+  };
+
+>>>>>>> origin/development
   componentDidMount() {
     this.cargarVentas();
   }
@@ -132,19 +274,57 @@ class TableVentas extends Component {
             className="inp-buscar"
             type="search"
             value={this.state.busqueda}
+<<<<<<< HEAD
+            placeholder="Búsqueda por (Vendedor Referencia Identificación (10 dig) ó Comprador)"
+            onChange={this.handleChange}
+          />
+      
+=======
             placeholder="Búsqueda por (ID Vendedor Referencia Identificación ó Comprador)"
             onChange={this.handleChange}
           />
 
+>>>>>>> origin/development
           <NavLink to="/ventas" activeClassName="active">
             <span className="btn-registrar">Registrar Nuevo</span>
           </NavLink>
         </div>
 
+<<<<<<< HEAD
+        
+
+=======
+>>>>>>> origin/development
         <div className="table-responsive">
           <table className="tab">
             <thead>
               <tr>
+<<<<<<< HEAD
+              <th>ID</th>
+                  <th>Vendedor</th>
+                  <th>Valor Total</th>
+                  <th>Precio Unitario</th>
+                  <th>Referencia Producto</th>
+                  <th>Cantidad</th>
+                  <th>Identificacion</th>
+                  <th>Nombre</th>
+                  <th>Acciones</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+              {this.state.ventas && 
+              this.state.ventas.map((venta, i)=>(
+                <tr key={i}>
+                  <td>{venta.id}</td>
+                    <td>{venta.vendedor}</td>
+                    <td>
+                      &#36;{" "}
+                      {new Intl.NumberFormat("es-ES").format(
+                        venta.valorTotal
+                      )}
+=======
                 <th>ID</th>
                 <th>Vendedor</th>
                 <th>Valor Total</th>
@@ -165,6 +345,7 @@ class TableVentas extends Component {
                     <td>
                       &#36;{" "}
                       {new Intl.NumberFormat("es-ES").format(venta.valorTotal)}
+>>>>>>> origin/development
                     </td>
 
                     <td>
@@ -175,19 +356,38 @@ class TableVentas extends Component {
                     </td>
 
                     <td>{venta.referenciaProducto}</td>
+<<<<<<< HEAD
+                      
+                    <td>
+                      {new Intl.NumberFormat("es-ES").format(
+                        venta.cantidad
+                      )}
+=======
 
                     <td>
                       &#36;{" "}
                       {new Intl.NumberFormat("es-ES").format(venta.cantidad)}
+>>>>>>> origin/development
                     </td>
 
                     <td>{venta.identificacion}</td>
                     <td>{venta.nombre}</td>
+<<<<<<< HEAD
+                    
+                    <td>
+                      <button
+                        className="btn-editar"
+                        onClick={() => {
+                          this.seleccionarVenta(venta)
+                          this.modalEditar();
+                        }}
+=======
 
                     <td>
                       <button
                         className="btn-editar"
                         onClick={() => this.seleccionarVenta(venta)}
+>>>>>>> origin/development
                       >
                         <Icon.Edit2 size={20} />
                       </button>
@@ -201,17 +401,32 @@ class TableVentas extends Component {
                         <Icon.Trash2 size={20} />
                       </button>
                     </td>
+<<<<<<< HEAD
+
+
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <Modal className="modal" isOpen={this.state.modalEliminar}>
+            <ModalHeader>Eliminar Venta</ModalHeader>
+=======
                   </tr>
                 ))}
             </tbody>
           </table>
           <Modal className="modal" isOpen={this.state.modalEliminar}>
             <ModalHeader>Eliminar Producto</ModalHeader>
+>>>>>>> origin/development
             <span className="btn-trash">
               <Icon.Trash2 size={40} />
             </span>
             <ModalBody>
+<<<<<<< HEAD
+              Está seguro que desea eliminar la venta {form && form.id}
+=======
               Está seguro que desea eliminar el producto {form && form.nombre}
+>>>>>>> origin/development
             </ModalBody>
             <ModalFooter>
               <button
@@ -220,8 +435,13 @@ class TableVentas extends Component {
               >
                 Cancelar
               </button>
+<<<<<<< HEAD
+              <button 
+                className="btn-si" 
+=======
               <button
                 className="btn-si"
+>>>>>>> origin/development
                 onClick={() => {
                   this.peticionDelete();
                   this.modalDeleteSuccess();
@@ -232,10 +452,132 @@ class TableVentas extends Component {
             </ModalFooter>
           </Modal>
 
+<<<<<<< HEAD
+          <Modal className="modal" isOpen={this.state.modalEditar}>
+          <div className="modal-content-editar">
+            <ModalHeader>Editar Venta</ModalHeader>
+
+            <ModalBody className="modalEditar">
+            <div className="contenedor">
+              <label className="label" htmlFor="vendedor">
+                Vendedor
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="vendedor"
+                id="vendedor"
+                onChange={this.handleChange}
+                value={form ? form.vendedor : ""}
+              />
+
+              <label className="label" htmlFor="valorTotal">
+                Valor Total
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="valorTotal"
+                id="valorTotal"
+                placeholder="$"
+                onChange={this.handleChange}
+                value={form ? form.valorTotal : ""}
+              />
+
+              <label className="label" htmlFor="precioUnitario">
+                Precio Unitario
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="precioUnitario"
+                id="precioUnitario"
+                placeholder="$"
+                onChange={this.handleChange}
+                value={form ? form.precioUnitario : ""}
+              />
+
+              <label className="label" htmlFor="referenciaProducto">
+                Referencia Producto
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="referenciaProducto"
+                id="referenciaProducto"
+                onChange={this.handleChange}
+                value={form ? form.referenciaProducto : ""}
+              />
+
+              <label className="label" htmlFor="cantidad">
+                Cantidad
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="cantidad"
+                id="cantidad"
+                placeholder="$"
+                onChange={this.handleChange}
+                value={form ? form.cantidad : ""}
+              />
+
+              <label className="label" htmlFor="identificacion">
+                Identificación
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="identificacion"
+                id="identificacion"
+                placeholder="$"
+                onChange={this.handleChange}
+                value={form ? form.identificacion : ""}
+              />
+
+              <label className="label" htmlFor="nombre">
+                Nombre
+              </label>
+              <input
+                className="input"
+                type="text"
+                name="nombre"
+                id="nombre"
+                onChange={this.handleChange}
+                value={form ? form.nombre : ""}
+              />
+            </div>
+            </ModalBody>
+
+            <ModalFooter>
+              <button
+                className="btn-no"
+                onClick={() => this.setState({ modalEditar: false })}
+              >
+                Cancelar
+              </button>
+              <button
+                className="btn-actualizar"
+                onClick={() => {
+                  this.peticionPut();
+                  this.modalUpdateSuccess();
+                }}
+              >
+                Actualizar
+              </button>
+            </ModalFooter>
+          </div>
+          </Modal>
+        </div>
+      </div>
+    );
+  } 
+=======
         </div>
       </div>
     );
   }
+>>>>>>> origin/development
 }
 
 export default TableVentas;
