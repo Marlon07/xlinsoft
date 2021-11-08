@@ -8,29 +8,19 @@ import { Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import Swal from "sweetalert2";
 
 const url = Global.ventasURL;
-<<<<<<< HEAD
 // const [ventas, setUsuarios]= useState([]);
 // const [tablaVentas, setTablaUsuarios]= useState([]);
 // const [busqueda, setBusqueda]= useState("");
-=======
->>>>>>> origin/development
 
 class TableVentas extends Component {
   state = {
     tablaVentas: [],
-<<<<<<< HEAD
     ventas: [], 
     busqueda: "",
     modalEliminar: false,
     modalEditar: false,
     form: {
      
-=======
-    ventas: [],
-    busqueda: "",
-    modalEliminar: false,
-    form: {
->>>>>>> origin/development
       vendedor: "",
       valorTotal: "",
       precioUnitario: "",
@@ -44,11 +34,7 @@ class TableVentas extends Component {
 
   modalDeleteSuccess = () => {
     Swal.fire({
-<<<<<<< HEAD
       html: "Producto eliminado satisfactoriamente",
-=======
-      html: "Venta eliminada satisfactoriamente",
->>>>>>> origin/development
       timer: 2000,
       timerProgressBar: true,
       icon: "success",
@@ -56,7 +42,6 @@ class TableVentas extends Component {
     });
   };
 
-<<<<<<< HEAD
   modalUpdateSuccess = () => {
     Swal.fire({
       html: "Producto actualizado satisfactoriamente",
@@ -88,17 +73,6 @@ class TableVentas extends Component {
       })
       .catch((error) => {
         console.log(error.message);
-=======
-  cargarVentas = async () => {
-    await axios
-      .get(url)
-      .then((response) => {
-        this.setState({ tablaVentas: response.data });
-        this.setState({ ventas: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
->>>>>>> origin/development
       });
   };
 
@@ -130,7 +104,6 @@ class TableVentas extends Component {
     });
   };
 
-<<<<<<< HEAD
   handleChange = async (e) => {
     this.setState({ busqueda: e.target.value });
     this.filtrar(e.target.value);
@@ -177,45 +150,11 @@ class TableVentas extends Component {
       }else if(elemento.vendedor.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
             || elemento.nombre.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
       ){
-=======
-  handleChange = (e) => {
-    this.setState({ busqueda: e.target.value });
-    this.filtrar(e.target.value);
-  };
-
-  filtrar = (terminoBusqueda) => {
-    var resultadosBusqueda = this.state.tablaVentas.filter((elemento) => {
-      if (terminoBusqueda === "") {
-        return elemento;
-      } else if (
-        elemento.id
-          .toString()
-          .toLowerCase()
-          .includes(terminoBusqueda.toLowerCase()) ||
-        elemento.vendedor
-          .toString()
-          .toLowerCase()
-          .includes(terminoBusqueda.toLowerCase()) ||
-        elemento.referenciaProducto
-          .toString()
-          .toLowerCase()
-          .includes(terminoBusqueda.toLowerCase().length > 5) ||
-        elemento.identificacion
-          .toString()
-          .toLowerCase()
-          .includes(terminoBusqueda.toLowerCase().length > 5) ||
-        elemento.nombre
-          .toString()
-          .toLowerCase()
-          .includes(terminoBusqueda.toLowerCase())
-      ) {
->>>>>>> origin/development
         return elemento;
       }
       return false;
     });
     this.setState({ ventas: resultadosBusqueda });
-<<<<<<< HEAD
   }
 
   isAlphaNumeric(str) {
@@ -253,10 +192,6 @@ class TableVentas extends Component {
   //   peticionGet();
   //   },[])
 
-=======
-  };
-
->>>>>>> origin/development
   componentDidMount() {
     this.cargarVentas();
   }
@@ -274,32 +209,21 @@ class TableVentas extends Component {
             className="inp-buscar"
             type="search"
             value={this.state.busqueda}
-<<<<<<< HEAD
             placeholder="Búsqueda por (Vendedor Referencia Identificación (10 dig) ó Comprador)"
             onChange={this.handleChange}
           />
       
-=======
-            placeholder="Búsqueda por (ID Vendedor Referencia Identificación ó Comprador)"
-            onChange={this.handleChange}
-          />
-
->>>>>>> origin/development
           <NavLink to="/ventas" activeClassName="active">
             <span className="btn-registrar">Registrar Nuevo</span>
           </NavLink>
         </div>
 
-<<<<<<< HEAD
         
 
-=======
->>>>>>> origin/development
         <div className="table-responsive">
           <table className="tab">
             <thead>
               <tr>
-<<<<<<< HEAD
               <th>ID</th>
                   <th>Vendedor</th>
                   <th>Valor Total</th>
@@ -324,28 +248,6 @@ class TableVentas extends Component {
                       {new Intl.NumberFormat("es-ES").format(
                         venta.valorTotal
                       )}
-=======
-                <th>ID</th>
-                <th>Vendedor</th>
-                <th>Valor Total</th>
-                <th>Precio Unitario</th>
-                <th>Referencia Producto</th>
-                <th>Cantidad</th>
-                <th>Identificacion</th>
-                <th>Nombre</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.ventas &&
-                this.state.ventas.map((venta) => (
-                  <tr key={venta.id}>
-                    <td>{venta.id}</td>
-                    <td>{venta.vendedor}</td>
-                    <td>
-                      &#36;{" "}
-                      {new Intl.NumberFormat("es-ES").format(venta.valorTotal)}
->>>>>>> origin/development
                     </td>
 
                     <td>
@@ -356,23 +258,15 @@ class TableVentas extends Component {
                     </td>
 
                     <td>{venta.referenciaProducto}</td>
-<<<<<<< HEAD
                       
                     <td>
                       {new Intl.NumberFormat("es-ES").format(
                         venta.cantidad
                       )}
-=======
-
-                    <td>
-                      &#36;{" "}
-                      {new Intl.NumberFormat("es-ES").format(venta.cantidad)}
->>>>>>> origin/development
                     </td>
 
                     <td>{venta.identificacion}</td>
                     <td>{venta.nombre}</td>
-<<<<<<< HEAD
                     
                     <td>
                       <button
@@ -381,13 +275,6 @@ class TableVentas extends Component {
                           this.seleccionarVenta(venta)
                           this.modalEditar();
                         }}
-=======
-
-                    <td>
-                      <button
-                        className="btn-editar"
-                        onClick={() => this.seleccionarVenta(venta)}
->>>>>>> origin/development
                       >
                         <Icon.Edit2 size={20} />
                       </button>
@@ -401,7 +288,6 @@ class TableVentas extends Component {
                         <Icon.Trash2 size={20} />
                       </button>
                     </td>
-<<<<<<< HEAD
 
 
                 </tr>
@@ -410,23 +296,11 @@ class TableVentas extends Component {
           </table>
           <Modal className="modal" isOpen={this.state.modalEliminar}>
             <ModalHeader>Eliminar Venta</ModalHeader>
-=======
-                  </tr>
-                ))}
-            </tbody>
-          </table>
-          <Modal className="modal" isOpen={this.state.modalEliminar}>
-            <ModalHeader>Eliminar Producto</ModalHeader>
->>>>>>> origin/development
             <span className="btn-trash">
               <Icon.Trash2 size={40} />
             </span>
             <ModalBody>
-<<<<<<< HEAD
               Está seguro que desea eliminar la venta {form && form.id}
-=======
-              Está seguro que desea eliminar el producto {form && form.nombre}
->>>>>>> origin/development
             </ModalBody>
             <ModalFooter>
               <button
@@ -435,13 +309,8 @@ class TableVentas extends Component {
               >
                 Cancelar
               </button>
-<<<<<<< HEAD
               <button 
                 className="btn-si" 
-=======
-              <button
-                className="btn-si"
->>>>>>> origin/development
                 onClick={() => {
                   this.peticionDelete();
                   this.modalDeleteSuccess();
@@ -452,7 +321,6 @@ class TableVentas extends Component {
             </ModalFooter>
           </Modal>
 
-<<<<<<< HEAD
           <Modal className="modal" isOpen={this.state.modalEditar}>
           <div className="modal-content-editar">
             <ModalHeader>Editar Venta</ModalHeader>
@@ -572,12 +440,6 @@ class TableVentas extends Component {
       </div>
     );
   } 
-=======
-        </div>
-      </div>
-    );
-  }
->>>>>>> origin/development
 }
 
 export default TableVentas;

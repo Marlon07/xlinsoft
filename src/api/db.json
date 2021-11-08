@@ -1,0 +1,118 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Nvidia RTX 2080 S",
+      "descripcion": "Tarjeta gráfica para videojuegos",
+      "valorUnitario": 3350000,
+      "estado": "No disponible"
+    },
+    {
+      "id": 2,
+      "nombre": "Monitor LED QHD",
+      "descripcion": "Pantalla de 75Hz para mejor fluidez",
+      "valorUnitario": 926000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 3,
+      "nombre": "Diadema Gamer Redragon",
+      "descripcion": "Este auricular, de sonido 7.1 con USB, garantizan la mejor calidad de sonido en nuestros diafragmas de 40 mm con imanes de neodimio, ideales en la construcción de periféricos de sonido.",
+      "valorUnitario": 171000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 4,
+      "nombre": "Teclado redragon k630w",
+      "descripcion": "El interruptor azul táctil distintivo ofrece una respuesta de escritura auditiva fantástica.",
+      "valorUnitario": 176000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 5,
+      "nombre": "Nvidia RTX 3080 Ti",
+      "descripcion": "Tarjeta grafica para videojuegos gama alta",
+      "valorUnitario": 13500000,
+      "estado": "Disponible"
+    },
+    {
+      "id": 11,
+      "nombre": "Diadema Corsair Virtuoso SE",
+      "descripcion": "Diadema Corsair Virtuoso wireless, sonido 7.1, Hi-Res",
+      "valorUnitario": "965000",
+      "estado": "Disponible"
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Juan Francisco Quintero",
+      "estado": "Autorizado",
+      "perfil": "Administrador",
+      "id": 1
+    },
+    {
+      "nombre": "Felipe Alejandro Chavez",
+      "estado": "Autorizado",
+      "perfil": "Administrador",
+      "id": 2
+    },
+    {
+      "nombre": "Adriana Marcela Díaz",
+      "estado": "Pendiente",
+      "perfil": "Vendedor",
+      "id": 3
+    }
+  ],
+  "ventas": [
+    {
+      "id": 1,
+      "vendedor": "Juan Francisco Quintero",
+      "valorTotal": "5000",
+      "precioUnitario": "1000",
+      "referenciaProducto": "ULN234",
+      "cantidad": "5",
+      "identificacion": "1094259425",
+      "nombre": "Nickollas"
+    },
+    {
+      "id": 2,
+      "vendedor": "Pacho Quinteros",
+      "valorTotal": "2000",
+      "precioUnitario": "500",
+      "referenciaProducto": "UL23",
+      "cantidad": "4",
+      "identificacion": "1094239435",
+      "nombre": "Brayan"
+    },
+    {
+      "vendedor": "pardo",
+      "valorTotal": "18000",
+      "precioUnitario": "9000",
+      "referenciaProducto": "at340",
+      "cantidad": "2",
+      "identificacion": "1007036219",
+      "nombre": "Amira",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "vendedor": "julio",
+      "valorTotal": "4500",
+      "precioUnitario": "1500",
+      "referenciaProducto": "HTF34",
+      "cantidad": "3",
+      "identificacion": "1234567891",
+      "nombre": "Linis"
+    },
+    {
+      "vendedor": "julio",
+      "valorTotal": "18000",
+      "precioUnitario": "9000",
+      "referenciaProducto": "HF34",
+      "cantidad": "2",
+      "identificacion": "1007036219",
+      "nombre": "Amira",
+      "id": 5
+    }
+  ]
+}
