@@ -181,7 +181,7 @@ class TableProductos extends Component {
               this.state.productos.map((producto, i) => {
                 return (
                   <tr key={i}>
-                    <td>{producto.id_p}</td>
+                    <td>{producto.id}</td>
                     <td>{producto.nombre}</td>
                     <td>{producto.descripcion}</td>
                     <td>

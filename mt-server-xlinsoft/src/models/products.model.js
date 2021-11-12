@@ -2,20 +2,19 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const productsSchema = new Schema({
-  id_p: {
+  id: {
     type: Number,
     required: true,
-    unique: true,
   },
-  name: {
+  nombre: {
     type: String,
     required: true,
   },
-  description: {
+  descripcion: {
     type: String,
     required: true,
   },
-  valorunitario: {
+  valorUnitario: {
     type: Number,
     required: true,
   },

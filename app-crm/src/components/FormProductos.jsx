@@ -12,7 +12,7 @@ class FormProductos extends Component {
     data: [],
     modalEliminar: false,
     form: {
-      id: "",
+      id_p: "",
       nombre: "",
       descripcion: "",
       valorUnitario: "",
@@ -34,7 +34,7 @@ class FormProductos extends Component {
 
   // Añadir producto
   peticionPost = async () => {
-    delete this.state.form.id;
+    delete this.state.form.id_p;
     await axios
       .post("http://localhost:8080/api/products/add", this.state.form)
       .then((response) => {
@@ -67,6 +67,7 @@ class FormProductos extends Component {
 
   handleOnclick = () => {
     const isValid =
+      this.state.form?.id !== "" &&
       this.state.form?.nombre !== "" &&
       this.state.form?.descripcion !== "" &&
       this.state.form?.valorUnitario !== "";
@@ -82,7 +83,7 @@ class FormProductos extends Component {
 
   // UPDATE
   peticionPut = () => {
-    axios.put(url + this.state.form.id, this.state.form).then((response) => {
+    axios.put(url + this.state.form.id_p, this.state.form).then((response) => {
       this.cargarProductos();
     });
   };
@@ -91,7 +92,7 @@ class FormProductos extends Component {
     this.setState({
       tipoModal: "actualizar",
       form: {
-        id: producto.id,
+        id_p: producto.id_p,
         nombre: producto.nombre,
         descripcion: producto.descripcion,
         valorUnitario: producto.valorUnitario,
@@ -116,6 +117,18 @@ class FormProductos extends Component {
       <div>
         <div className="contenedor">
           <form id="form1" className="form-group">
+            <label className="label" htmlFor="id">
+              ID
+            </label>
+            <input
+              className="input"
+              type="text"
+              name="id"
+              id="id"
+              onChange={this.handleChange}
+              // value={form ? form.nombre : ""}
+            />
+
             <label className="label" htmlFor="nombre">
               Nombre
             </label>
@@ -176,10 +189,7 @@ class FormProductos extends Component {
             >
               Guardar
             </button>
-            <button
-              className="btn-cancelar"
-              type="reset"
-            >
+            <button className="btn-cancelar" type="reset">
               Cancelar
             </button>
           </form>
